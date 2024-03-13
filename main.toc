@@ -1,0 +1,56 @@
+\contentsline {chapter}{\numberline {1}Introduction}{3}{chapter.1}%
+\contentsline {chapter}{\numberline {2}Literature Review}{4}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Evolution of Restaurant Management Systems}{5}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Digital Ordering Systems}{5}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Customer Behavior and Technology Acceptance Towards Digitalisation}{6}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Challenges and Solutions}{6}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Current Implementations}{7}{section.2.5}%
+\contentsline {section}{\numberline {2.6}Research Gaps}{7}{section.2.6}%
+\contentsline {section}{\numberline {2.7}Conclusion}{8}{section.2.7}%
+\contentsline {chapter}{\numberline {3}Product Specification}{10}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Empirical Exploration}{11}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Interviews with Restaurant Owners and Staff}{11}{subsection.3.1.1}%
+\contentsline {chapter}{\numberline {4}Methodology}{12}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Overview}{13}{section.4.1}%
+\contentsline {section}{\numberline {4.2}System Design}{13}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Backend Architecture}{13}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Frontend Architecture}{14}{subsection.4.2.2}%
+\contentsline {section}{\numberline {4.3}Database Architecture}{15}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Place}{16}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}Category}{16}{subsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.3.3}MenuItem}{16}{subsection.4.3.3}%
+\contentsline {subsection}{\numberline {4.3.4}Tag}{16}{subsection.4.3.4}%
+\contentsline {subsection}{\numberline {4.3.5}UserSession}{16}{subsection.4.3.5}%
+\contentsline {subsection}{\numberline {4.3.6}Order}{16}{subsection.4.3.6}%
+\contentsline {subsection}{\numberline {4.3.7}OrderItem}{16}{subsection.4.3.7}%
+\contentsline {subsection}{\numberline {4.3.8}Invoice}{16}{subsection.4.3.8}%
+\contentsline {subsection}{\numberline {4.3.9}UserProfile}{17}{subsection.4.3.9}%
+\contentsline {subsection}{\numberline {4.3.10}UserTagCount}{17}{subsection.4.3.10}%
+\contentsline {section}{\numberline {4.4}Digital Menu Implementation}{17}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Menu Display}{17}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}Order Placement}{17}{subsection.4.4.2}%
+\contentsline {subsection}{\numberline {4.4.3}Personalized Recommendations}{17}{subsection.4.4.3}%
+\contentsline {section}{\numberline {4.5}Recommendation Algorithm}{17}{section.4.5}%
+\contentsline {subsection}{\numberline {4.5.1}User Preferences and Order History Analysis}{18}{subsection.4.5.1}%
+\contentsline {subsection}{\numberline {4.5.2}Tag-Based Recommendations}{18}{subsection.4.5.2}%
+\contentsline {subsection}{\numberline {4.5.3}Price Sensitivity}{18}{subsection.4.5.3}%
+\contentsline {subsection}{\numberline {4.5.4}Personalized Recommendations}{18}{subsection.4.5.4}%
+\contentsline {subsection}{\numberline {4.5.5}Combining Recommendations for Combo Meals}{18}{subsection.4.5.5}%
+\contentsline {subsection}{\numberline {4.5.6}Example Usage}{18}{subsection.4.5.6}%
+\contentsline {section}{\numberline {4.6}Flexible Bill Sharing}{20}{section.4.6}%
+\contentsline {subsection}{\numberline {4.6.1}Design Considerations}{20}{subsection.4.6.1}%
+\contentsline {subsection}{\numberline {4.6.2}Implementation}{20}{subsection.4.6.2}%
+\contentsline {section}{\numberline {4.7}Admin Panel}{21}{section.4.7}%
+\contentsline {subsection}{\numberline {4.7.1}Features}{21}{subsection.4.7.1}%
+\contentsline {section}{\numberline {4.8}Kitchen Display System}{21}{section.4.8}%
+\contentsline {subsection}{\numberline {4.8.1}Features}{21}{subsection.4.8.1}%
+\contentsline {section}{\numberline {4.9}Floor Staff Display}{22}{section.4.9}%
+\contentsline {subsection}{\numberline {4.9.1}Features}{22}{subsection.4.9.1}%
+\contentsline {section}{\numberline {4.10}Order Tracking}{22}{section.4.10}%
+\contentsline {chapter}{\numberline {5}Evaluation}{23}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Usability Evaluation}{24}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Performance Evaluation}{24}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Security Evaluation}{24}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Comparative Evaluation}{24}{section.5.4}%
+\contentsline {chapter}{\numberline {6}Discussion}{25}{chapter.6}%
+\contentsline {chapter}{\numberline {7}Conclusion}{26}{chapter.7}%

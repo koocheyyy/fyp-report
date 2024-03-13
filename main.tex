@@ -1,0 +1,54 @@
+\documentclass{report}
+\usepackage{graphicx}
+\usepackage{hyperref}
+
+% Packages
+% Add any additional packages you need here
+
+% Document information
+\title{Your Thesis Title}
+\author{Your Name}
+\date{\today}
+
+\begin{document}
+
+% Title page
+\maketitle
+
+% Abstract
+\begin{abstract}
+% Add your abstract here
+\end{abstract}
+
+% Table of contents
+\tableofcontents
+
+% Chapters
+\chapter{Introduction}
+% Add your introduction chapter here
+
+\chapter{Literature Review}
+\include{chapters/literaturereview}
+
+\chapter{Product Specification}
+\include{chapters/specification}
+
+\chapter{Methodology}
+\include{chapters/methodology}
+% Add more chapters as needed
+
+\chapter{Evaluation}
+\include{chapters/evaluation}
+
+\chapter{Discussion}
+
+% Conclusion
+\chapter{Conclusion}
+% Add your conclusion chapter here
+
+% References
+\begin{thebibliography}{}
+% Add your references here
+\end{thebibliography}
+
+\end{document}
