@@ -212,7 +212,7 @@ This section outlines the systematic steps taken to design, implement, and evalu
 \begin{itemize}
     \item \textbf{Menu Management}: The adminstrator would be able to manage the menu, including adding, updating, and deleting menu items and categories. The menu management system is where the admin can add new items, update existing items, and delete items that are no longer available. The admin can also create new categories and assign items to specific categories. This is where the admin would specify the Tags for each item which would be used for the recommendation algorithm.
     \item \textbf{Order Tracking}: Provides real-time tracking of customer orders, allowing staff to monitor and manage orders efficiently. This feature allows the adminstrator to keep track of which tables are occupied, the time since the last order, and the status of each order.
-    \item \textbf{Billing and Invoice Management}: The adminstrator can manage billing and invoices, for each table and would be able to see all the separate sessions that are on that table. This feature also allows the adminstrator to view and manage the billing and invoices for each table, including the ability to split bills and track payments.
+    \item \textbf{Billing and Invoice Management}: The adminstrator can manage billing and invoices, for each table and would be able to see all the separate sessions that are on that table. This feature also allows the adminstrator to view and manage the billing and invoices for each table, including the ability to split bills and track payments. All paid and unpaid invoices are stored, allowing the adminstrator to view and manage them as needed.
     \item \textbf{Sales Analysis}: The adminstrator can view sales data such as daily, weekly and monthly sales. The adminstrator can also view the most popular items and the least popular items. This feature also displays the peak hours of the day which along side with the popular items can be used to make decisions on inventory.
     \item \textbf{Global Settings}: The adminstrator can manage global settings such as tax rates, menu themes and fonts. They can also change the name of the restaurant and the logo.
 \end{itemize}
@@ -227,7 +227,17 @@ This section outlines the systematic steps taken to design, implement, and evalu
 \section{Floor Staff Display}
 \subsection{Features}
 \begin{itemize}
-    \item \textbf{Order Tracking}: The floor staff would be able to see the food and drink orders that have been completed and show them where to deliver the orders. This feature allows the floor staff to view the orders that are ready to be delivered, and manage them accordingly. Once the order is served, the floor staff can mark the order as served.
+    \item \textbf{Order Tracking}: The orders that have been prepared by the kitchen would be displayed.
+    \item \textbf{Table Numbers}: The table numbers of the orders would be displayed.
+    \item \textbf{Update Status}: Once the order has been served, the floor staff would be able to update the status of the order as served.
 \end{itemize}
 
-\section{Order Tracking}
+\section{Menu Management}
+\subsection{Features}
+\begin{itemize}
+    \item \textbf{Add New Items}: The system should allow restaurant staff to add new items to the menu, including specifying the name, description, price, category, tags which will be used for the recommendation algorithm, and availability of the item. This feature allows the restaurant staff to add new items to the menu as needed, and specify the details of each item.
+    \item \textbf{Update Items}: The system should allow restaurant staff to update existing items on the menu, including changing the name, description, price, category, tags, and availability of the item. This feature allows the restaurant staff to update the details of existing items on the menu as needed.
+    \item \textbf{Remove Items}: The system should allow restaurant staff to remove items from the menu that are no longer available. This feature allows the restaurant staff to remove items from the menu that are no longer available or have been discontinued.
+    \item \textbf{Create Categories}: The system should allow restaurant staff to create new categories for the menu, and assign items to specific categories. This feature allows the restaurant staff to organize the menu into different categories, making it easier for customers to navigate and find items.
+    \item \textbf{Manage Tags}: The system should allow restaurant staff to manage tags for each item, specifying the attributes of the item such as vegan, spicy, or gluten-free. This feature allows the restaurant staff to tag items with specific attributes, which will be used for the recommendation algorithm.
+\end{itemize}
