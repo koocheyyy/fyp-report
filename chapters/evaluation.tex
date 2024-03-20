@@ -1,7 +1,12 @@
-\section{Usability Evaluation}
+\section{Technical Evaluation}
+API testing were carried out to the Django backend to measure the performance of the system. The API testing was done using Postman. The custom API requests were made through Postman and the requests have been designed to mimic real world use.
 
-\section{Performance Evaluation}
+\subsection{API Testing}
+Both the server and the database are needed to be tested with multiple requests per second. Specifically the Ordering API was tested in this experiment. The reason to this is to test how the server would handle multipe order requests at the same time. Postman was used to send multiple POST requests to the server because the platform allows tests to be written in JavaScript and run in the Postman environment. Provided with the correct body and headers in the API call, every request had to return a 200 response code. The treshold for any response time is 200ms to maintain a responsive system. The tests are separated between POST requests and GET requests. The POST requests are used to send data and the GET requests are used to retrieve from the database.
 
-\section{Security Evaluation}
-
-\section{Comparative Evaluation}
+\subsection{POST Request Testing}
+Some of the most demanding POST requests were used in testing and these chosen POST requests are the ones that are most likely to be used in a real world scenario and will have the most impact to the system efficiency and user experience. The POST requests that were tested are the following:
+\begin{itemize}
+    \item Create Order - \url{http://localhost:8000/api/create_payment_intent/}
+    
+\end{itemize}

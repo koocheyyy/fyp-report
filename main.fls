@@ -430,6 +430,9 @@ INPUT chapters/methodology.aux
 INPUT ./chapters/evaluation.aux
 INPUT chapters/evaluation.aux
 INPUT chapters/evaluation.aux
+INPUT ./chapters/appendix.aux
+INPUT chapters/appendix.aux
+INPUT chapters/appendix.aux
 OUTPUT main.aux
 INPUT /usr/local/texlive/2023/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 INPUT /usr/local/texlive/2023/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
@@ -534,6 +537,16 @@ INPUT ./chapters/evaluation.tex
 INPUT chapters/evaluation.tex
 INPUT ./chapters/evaluation.tex
 INPUT chapters/evaluation.tex
+INPUT ./chapters/appendix.tex
+INPUT ./chapters/appendix.tex
+INPUT ./chapters/appendix.tex
+OUTPUT chapters/appendix.aux
+INPUT ./chapters/appendix.tex
+INPUT ./chapters/appendix.tex
+INPUT ./chapters/appendix.tex
+INPUT chapters/appendix.tex
+INPUT ./chapters/appendix.tex
+INPUT chapters/appendix.tex
 INPUT main.aux
 INPUT ./chapters/literaturereview.aux
 INPUT chapters/literaturereview.aux
@@ -547,6 +560,9 @@ INPUT chapters/methodology.aux
 INPUT ./chapters/evaluation.aux
 INPUT chapters/evaluation.aux
 INPUT chapters/evaluation.aux
+INPUT ./chapters/appendix.aux
+INPUT chapters/appendix.aux
+INPUT chapters/appendix.aux
 INPUT ./main.out
 INPUT ./main.out
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb

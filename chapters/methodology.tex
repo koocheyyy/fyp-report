@@ -1,27 +1,27 @@
 \section{Overview}
-This chapter outlines the systematic methodology employed to design, develop, and evaluate a web-based restaurant management application. The application leverages modern web technologies, including a React.js frontend, to enhance the dining experience by enabling customers to place orders using QR codes, receive personalized menu recommendations, and choose flexible bill-sharing options. The development process is guided by user-centered design principles, aiming to improve customer satisfaction and operational efficiency for restaurants.
+This chapter outlines the systematic methodology employed to design, develop, and evaluate a web-based restaurant management application. The application leverages modern web technologies, including a React.js frontend \cite{15}, to enhance the dining experience by enabling customers to place orders using QR codes, receive personalized menu recommendations, and choose flexible bill-sharing options. The development process is guided by user-centered design principles, aiming to improve customer satisfaction and operational efficiency for restaurants.
 
 \section{System Design}
-The web application is built using React.js frontend paired with Django backend, with a SQLite database. The frontend is responsible for rendering the user interface and handling user interactions, while the backend manages the business logic and data storage. The frontend and backend communicate via Djano RESTful APIs using Axios from React, enabling the application to be scalable and maintainable. The application can hosted on a cloud platform, such as AWS or Heroku or Railway.
+The web application is built using React.js \cite{15}frontend with Django backend \cite{16}, with a SQLite database \cite{17}. The frontend is responsible for rendering the user interface and handling user interactions, while the backend manages the business logic and data storage. The frontend and backend communicate via Djano RESTful APIs \cite{15}using Axios \cite{18} from React. The application can hosted on a cloud platform, such as AWS \cite{23} or Heroku \cite{24} or Railway \cite{25}.
 
 \subsection{Backend Architecture}
 \begin{itemize}
     \item \textbf{Models}: Django models define the database schema. Each model corresponds to a database table and is used for creating, retrieving, updating, and deleting records. For instance, models like Place, Category, MenuItem, and Order represent the core entities of the restaurant management system.
-    \item \textbf{Views}: Django views handle the business logic of the application. They receive web requests and return web responses. Views interact with models and return JSON responses (in the case of a REST API used by a React frontend).
+    \item \textbf{Views}: Django views handle the business logic of the application. They receive web requests and return web responses. Views interact with models and return JSON responses (in the case of a REST API used by a React frontend) \cite{18}.
     \item \textbf{URL Routing}: Django's URL routes incoming requests to the appropriate view based on the request URL. This is where you define URL patterns for your API endpoints.
-    \item \textbf{Django REST Framework}: For integrating with a React frontend, Django REST Framework (DRF) is used to build a RESTful API. DRF provides serializers for converting complex data types to and from JSON and viewsets for handling common API operations.
+    \item \textbf{Django REST Framework}: For integrating with a React frontend, Django REST Framework (DRF) is used to build a RESTful API. DRF provides serializers for converting complex data types to and from JSON and viewsets for handling common API operations \cite{20}.
     \item \textbf{Authentication and Authorization}: Django comes with a built-in authentication system, and DRF offers additional mechanisms for API authentication, such as token authentication.
-    \item \textbf{Database}: Django supports various databases like PostgreSQL, MySQL, SQLite, and Oracle. However, SQLite was chosen for its simplicity and ease of use.
+    \item \textbf{Database}: Django supports various databases like PostgreSQL, MySQL, SQLite, and Oracle. However, SQLite was chosen for its simplicity and ease of use \cite{17}.
 \end{itemize}
 
 \subsection{Frontend Architecture}
 \begin{itemize}
-    \item \textbf{React Components}: The frontend is built using React.js. React components are used to create reusable UI elements, such as buttons, forms, and menus.
-    \item \textbf{State Management}: React's state and context API are used to manage the application's state, such as user authentication, order details, and session information.
-    \item \textbf{Routing}: React Router is used for client-side routing, allowing the application to navigate between different views without a page refresh.
+    \item \textbf{React Components}: The frontend is built using React.js. React components are used to create reusable UI elements, such as buttons, forms, and menus \cite{15}.
+    \item \textbf{State Management}: React's state and context API are used to manage the application's state, such as user authentication, order details, and session information \cite{19}.
+    \item \textbf{Routing}: React Router is used for client-side routing, allowing the application to navigate between different views without a page refresh \cite{22}.
     \item \textbf{API Integration}: Axios is used to make HTTP requests to the Django backend, enabling the frontend to fetch and send data to the server.
     \item \textbf{User Interface}: The frontend is designed to be responsive and user-friendly, with a focus on providing an intuitive and visually appealing experience for customers.
-    \item \textbf{Bulma SCSS}: On top of using React Components, additional Bulma SCSS components were used to style the application, this allows the application to be responsive and have uniform styling.
+    \item \textbf{Bulma SCSS}: On top of using React Components, additional Bulma SCSS components were used to style the application, this allows the application to be responsive and have uniform styling \cite{22}.
 \end{itemize}
 
 \section{Database Architecture}
@@ -210,9 +210,8 @@ This section outlines the systematic steps taken to design, implement, and evalu
 \section{Admin Panel}
 \subsection{Features}
 \begin{itemize}
-    \item \textbf{Menu Management}: The adminstrator would be able to manage the menu, including adding, updating, and deleting menu items and categories. The menu management system is where the admin can add new items, update existing items, and delete items that are no longer available. The admin can also create new categories and assign items to specific categories. This is where the admin would specify the Tags for each item which would be used for the recommendation algorithm.
     \item \textbf{Order Tracking}: Provides real-time tracking of customer orders, allowing staff to monitor and manage orders efficiently. This feature allows the adminstrator to keep track of which tables are occupied, the time since the last order, and the status of each order.
-    \item \textbf{Billing and Invoice Management}: The adminstrator can manage billing and invoices, for each table and would be able to see all the separate sessions that are on that table. This feature also allows the adminstrator to view and manage the billing and invoices for each table, including the ability to split bills and track payments. All paid and unpaid invoices are stored, allowing the adminstrator to view and manage them as needed.
+    \item \textbf{Billing and Invoice Management}: The adminstrator can manage billing and invoices, for each table and would be able to see all the separate sessions that are on that table. This feature also allows the adminstrator to view and manage the billing and invoices for each table, including the ability to split bills and track payments. All paid and unpaid invoices are stored, allowing the adminstrator to view and manage them as needed. The invoices are designed to work with carbon printers as well.
     \item \textbf{Sales Analysis}: The adminstrator can view sales data such as daily, weekly and monthly sales. The adminstrator can also view the most popular items and the least popular items. This feature also displays the peak hours of the day which along side with the popular items can be used to make decisions on inventory.
     \item \textbf{Global Settings}: The adminstrator can manage global settings such as tax rates, menu themes and fonts. They can also change the name of the restaurant and the logo.
 \end{itemize}
@@ -222,6 +221,7 @@ This section outlines the systematic steps taken to design, implement, and evalu
 \begin{itemize}
     \item \textbf{Real-time Order Display}: The kitchen display system provides a real-time display of incoming orders, allowing kitchen staff to prepare and manage orders. This feature allows the kitchen staff to view the orders as they come in, and mark them as in progress or completed.
     \item \textbf{Separate Displays}: The system can display orders for different stations on separate screens, allowing staff to focus on their specific tasks. This feature allows the kitchen staff to view the orders that are relevant to their station, and manage them accordingly. Such as the bar which would only display drink orders.
+    \item \textbf{Time Warnings:} When the order time exceeds 15 minutes, the order would turn yellow and when it exceeds 25 minutes, the order would turn red. This feature allows the kitchen staff to prioritize orders based on their urgency.
 \end{itemize}
 
 \section{Floor Staff Display}
