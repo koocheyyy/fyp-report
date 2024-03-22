@@ -1,0 +1,247 @@
+\section{Overview}
+This chapter outlines the systematic methodology employed to design, develop, and evaluate a web-based restaurant management application. The application leverages modern web technologies, including a React.js frontend \cite{15}, to enhance the dining experience by enabling customers to place orders using QR codes, receive personalized menu recommendations, and choose flexible bill-sharing options. The development process is guided by user-centered design principles, aiming to improve customer satisfaction and operational efficiency for restaurants.
+
+\section{System Design}
+The web application is built using React.js \cite{15}frontend with Django backend \cite{16}, with a SQLite database \cite{17}. The frontend is responsible for rendering the user interface and handling user interactions, while the backend manages the business logic and data storage. The frontend and backend communicate via Djano RESTful APIs \cite{15}using Axios \cite{18} from React. The application can hosted on a cloud platform, such as AWS \cite{23} or Heroku \cite{24} or Railway \cite{25}.
+
+
+\subsection{Backend Architecture}
+The backend architecture of the restaurant management system leverages Django's core components. Django was chosen as the backend framework due to its built in features, including the Django ORM for database management, Django REST Framework for API development allows for further scalability, and built-in user authentication and authorization mechanisms. Django models define the database schema, representing core entities like Place, Category, MenuItem, and Order. Views handle the application's business logic, receiving and responding to web requests, interacting with models, and returning JSON responses for use by a React frontend \cite{18}. Django's URL routing directs incoming requests to the appropriate view. The Django REST Framework (DRF) is used to construct a RESTful API for the React interface, providing serializers for complex data to JSON conversion and viewsets for common API operations \cite{20}. Authentication and authorization are handled through Django's built-in system and DRF's mechanisms, such as token authentication. Finally, a database like SQLite is used to persist the system's data \cite{17}.
+
+\subsection{Frontend Architecture}
+The frontend architecture of the application leverages React.js to build its user interface, utilizing React components for crafting reusable UI elements like buttons, forms, and menus \cite{15}. State management is handled through React's state and context API, which manage crucial application states, including user authentication, order details, and session information \cite{19}. For navigating between different views without refreshing the page, React Router is employed for client-side routing \cite{22}. The integration with the backend is facilitated through Axios, which is used for making HTTP requests to the Django backend, thereby enabling data exchange between the frontend and the server. The user interface is designed with responsiveness and user-friendliness in mind, aiming to provide an intuitive and visually appealing experience for users. Additionally, Bulma SCSS components are utilized alongside React Components to ensure responsive and uniform styling across the application \cite{22}.
+
+\section{Database Architecture}
+\includegraphics[width=1\textwidth]{images/databasediagram.png}
+
+\subsection{Place}
+Represents a restaurant or place that uses the app. It includes details like the owner (linked to the Django \texttt{User} model), name, image, number of tables, and aesthetic customizations (font and color). A new field, \texttt{tax\_amount}, has been added to manage tax calculations.
+
+\subsection{Category}
+Organizes menu items into categories (e.g., appetizers, entrees, desserts) for each place. This helps in structuring the menu for easier navigation by the customers.
+
+\subsection{MenuItem}
+Details about each menu item, including the place it belongs to, its category, name, description, price, and availability. It also specifies whether the item is a drink and allows for tagging (e.g., vegan, spicy) through a many-to-many relationship with the \texttt{Tag} model.
+
+\subsection{Tag}
+Used to label menu items with specific attributes, enhancing the ability to offer personalized recommendations based on customer preferences. Tags are used to describe attributes of food and based on (research) it has been shown that using attributes of food is a good way to recommend food items to customers.
+
+\subsection{UserSession}
+Tracks active sessions by customers, including their email, session ID, and table number. It supports functionalities like order tracking and session management. 
+
+\subsection{Order}
+Records details of customer orders, including the items ordered (linked through \texttt{OrderItem}), the table and place, payment information, and status. It also tracks the session and customer email.
+
+\subsection{OrderItem}
+A through model for the many-to-many relationship between \texttt{Order} and \texttt{MenuItem}, capturing the quantity of each menu item ordered.
+
+\subsection{Invoice}
+Manages billing information, including the items ordered, total amount, and payment status. It introduces the \texttt{items} field as a JSON structure to store ordered items, allowing for flexible representation of order details.
+
+\subsection{UserProfile}
+Represents a user's profile with a unique email. It is linked to \texttt{Tag} through \texttt{UserTagCount} to track preference metrics.
+
+\subsection{UserTagCount}
+Tracks the count of tags associated with a user's orders, facilitating the personalization engine to recommend items based on preferred tags.
+
+% \section{Personalization and Recommendations}
+% The schema supports advanced personalization features:
+% \begin{itemize}
+%     \item \textbf{Personalized Menu Recommendations:} By analyzing a user's order history and preferences (e.g., most ordered tags, preferred price range), the system can recommend menu items that match their taste. This is achieved through methods in the \texttt{UserProfile} model, which calculate preferences based on past orders and tag popularity.
+%     \item \textbf{Recommendation Algorithms:} The application uses detailed methods within \texttt{UserProfile} to recommend not only individual food and drink items but also combo meals by creating all possible combinations of recommended food and drink items.
+% \end{itemize}
+
+% \section{Key Features and Relationships}
+% \begin{itemize}
+%     \item The system uses Django's built-in \texttt{User} model for authentication and ownership, linking restaurant places directly to user accounts.
+%     \item The \texttt{ForeignKey} and \texttt{ManyToManyField} relationships are utilized extensively to create a network of interconnected entities, enabling complex queries for personalization, order tracking, and session management.
+%     \item The application's database design is geared towards enhancing the user experience through features like personalized recommendations, flexible ordering sessions, and detailed order and billing management.
+%     \item The use of methods like \texttt{create\_session\_for\_email} in \texttt{UserSession} and recommendation algorithms in \texttt{UserProfile} demonstrate the application's dynamic and user-focused functionality.
+% \end{itemize}
+% This architecture facilitates a rich, interactive, and personalized user experience in the restaurant management domain, blending traditional e-commerce models with innovative features tailored to the hospitality industry.
+
+\section {Digital Menu Implementation}
+QR codes placed on each table serve as the entry point for customers to access the menu and place orders. Upon scanning the QR code with a smartphone, customers are directed to a web interface where they can browse the menu, make selections, and specify their order preferences.
+\subsection{Menu Display}
+The menu is organized into categories, with each item displaying its name, description, price, and availability. The user interface is designed to be visually appealing and easy to navigate, with a responsive layout that adapts to different screen sizes.
+\subsection{Order Placement}
+Customers can add items to their order by clicking on the menu items and specifying the quantity. The system tracks the items ordered and the customer's session, allowing for order tracking and billing.
+\subsection{Personalized Recommendations}
+The application uses the customer's order history and preferences to recommend menu items that match their taste. This is achieved through methods in the \texttt{UserProfile} model, which calculate preferences based on past orders and tag popularity. The algorithm takes into account the most ordered tags and preferred price range to recommend items that align with the customer's preferences.
+
+\section{Recommendation Algorithm}
+The recommendation algorithm embedded within the \texttt{UserProfile} model of our restaurant management application is designed to offer personalized menu suggestions to users. It analyzes users' past orders, preferences, and price sensitivity to recommend items that align with their tastes.
+
+\subsection{Possible Implementations}
+The recommendation algorithm can be implemented in several ways. Here are some of the considered directions.
+
+\subsection*{Collaborative Filtering}
+Collaborative filtering recommends items based on the preferences of similar users. It identifies users with similar tastes and suggests items that they have liked. This method is effective for discovering new items based on the preferences of a user's peers.
+
+\subsection*{Content-Based Filtering}
+Content-based filtering uses item features to recommend other items similar to what the user likes, based on their previous actions or explicit feedback. It is based on the idea that if a user likes a particular item, they will also like items that are similar to it. The algorithm uses attributes of the items to recommend other items with similar attributes. User profiles are created based on the items they have interacted with, and recommendations are made based on the similarity between the user profile and the item attributes.
+
+\subsection*{Hybrid Filtering}
+Hybrid Filtering combines collaborative and content-based filtering to leverage the strengths of both approaches. By combining the two methods, the system can provide more accurate and diverse recommendations, addressing the limitations of individual techniques.
+
+\subsection*{Matrix Factorization}
+Matrix Factorization is a collaborative filtering technique that decomposes the user-item interaction matrix into lower-dimensional matrices, capturing latent features of users and items. By learning these latent features, the algorithm can predict user preferences for items they have not interacted with.
+
+\subsection*{Deep Learning Models}
+Neural networks can be used to learn complex patterns in user-item interactions, enabling more accurate and personalized recommendations. These models can capture non-linear relationships between users and items, improving the quality of recommendations. However, they require large amounts of data and computational resources.
+
+\subsection*{Stable Matching Algorithms}
+Stable matching algorithms can be used to match users with items based on their preferences and constraints. By formulating the recommendation problem as a stable matching problem, the system can generate optimal matches between users and items, ensuring fairness and efficiency. However, this method requires additional feedback from users to determine if it was a good match which can be inconvenient for the user.
+
+\subsection*{Conclusion}
+The most suitable recommendation algorithm to be used in this scenario would be Content-Based Filtering. The algorithm can leverage the attributes of menu items and user preferences to recommend items that align with the user's taste profile. By analyzing the tags associated with each item and the user's preferred tags, the system can provide personalized recommendations that cater to the user's preferences. This approach is effective for recommending items based on the user's past interactions and preferences, enhancing the user experience and increasing customer satisfaction. Furthermore, the algorithm does not require additional data or feedback from other users, making it a practical and efficient solution for personalized menu recommendations.
+
+
+\subsection{User Preferences and Order History Analysis}
+The algorithm analyses the user's previous orders to deduce their preferences. The algorithm calculates the average price of the items ordered to establish a preferred price range and identifies the most ordered tags to understand the user's food preferences. This information is then used to score and recommend menu items that align with the user's taste.
+
+\subsection{Tag-Based Recommendations}
+
+\begin{itemize}
+    \item Users are linked to tags via the \texttt{UserTagCount} model, reflecting their taste preferences.
+    \item Menu items are scored based on their relevance to the user's preferred tags, with higher scores for better-matched items.
+\end{itemize}
+
+\subsection{Price Sensitivity}
+
+\begin{itemize}
+    \item The algorithm adjusts scores for items within the user's preferred price range, favoring those that align with past spending habits.
+\end{itemize}
+
+\subsection{Personalized Recommendations}
+
+\begin{itemize}
+    \item For food items: Excludes drinks, scoring food items based on tag preferences and price sensitivity.
+    \item For drink items: Similar process, but focuses solely on beverages, tailoring recommendations accordingly.
+\end{itemize}
+
+\subsection{Combining Recommendations for Combo Meals}
+
+\begin{itemize}
+    \item Creates combo meal suggestions by pairing the  top food and drink recommendations.
+\end{itemize}
+
+\subsection{Example Usage}
+\subsection*{Step 1: Determining the Preferred Price Range}
+
+Assume the user has ordered the following items:
+
+\begin{itemize}
+    \item Pizza: \$12 (Quantity: 2)
+    \item Burger: \$9 (Quantity: 1)
+    \item Salad: \$7 (Quantity: 3)
+\end{itemize}
+
+\subsection*{Calculation}
+
+\begin{verbatim}
+Total spent on Pizza = $12 * 2 = $24
+Total spent on Burger = $9 * 1 = $9
+Total spent on Salad = $7 * 3 = $21
+
+Total spent = $24 + $9 + $21 = $54
+Total quantity of items ordered = 2 + 1 + 3 = 6
+
+Average price per item = Total spent / Total quantity = $54 / 6 = $9
+\end{verbatim}
+
+Preferred price range is calculated as ±20 percent of the average price:
+\begin{verbatim}
+Lower bound = $9 * 0.8 = $7.20
+Upper bound = $9 * 1.2 = $10.80
+\end{verbatim}
+
+\subsection*{Step 2: Identifying Most Ordered Tags}
+
+Given tags for each item:
+\begin{itemize}
+    \item Pizza: ["Italian", "Cheese"]
+    \item Burger: ["American", "Beef"]
+    \item Salad: ["Vegetarian", "Healthy"]
+\end{itemize}
+
+The most ordered tags based on quantity are "Vegetarian" and "Healthy".
+
+\subsection*{Step 3: Scoring and Recommending Menu Items}
+
+New menu items to recommend:
+\begin{itemize}
+    \item Spaghetti: \$8 ["Italian", "Vegetarian"]
+    \item Chicken Wrap: \$10 ["Healthy", "Chicken"]
+    \item Fish Tacos: \$11 ["Seafood"]
+    \item Veggie Burger: \$9 ["Vegetarian", "American"]
+\end{itemize}
+
+\subsection*{Scoring}
+
+Spaghetti scores high for matching "Vegetarian" and being within the price range.
+Chicken Wrap scores for "Healthy" and being within the price range.
+Fish Tacos score lower due to being outside the price range and no matching tags.
+Veggie Burger scores for "Vegetarian" and being within the price range.
+
+
+\subsection*{Results}
+
+Based on the scoring, the recommended items in order are:
+\begin{enumerate}
+    \item Spaghetti
+    \item Chicken Wrap
+    \item Veggie Burger
+\end{enumerate}
+
+\section{Flexible Bill Sharing}
+
+This section outlines the systematic steps taken to design, implement, and evaluate this bill splitting implementation.
+
+\subsection{Design Considerations}
+A primary focus was to ensure an intuitive and hassle-free interaction with the bill-sharing feature, allowing customers to easily choose between individual payments or sharing the bill with others. The feature needed to accurately calculate and split the bill according to the specific orders and preferences of the diners, providing flexibility in how the bill could be shared. The system has to manage individual and group ordering, allowing customers to order individually or as a group, while ensuring accurate tracking of orders and payments.
+
+\subsection*{Possible Implementations}
+
+
+\subsection{Implementation}
+\begin{itemize}
+    \item \textbf{Order Placement via individual Sessions}: When customers scan the QR code at their table, they have the option to create an individual ordering session by entering their email address. This process ensures that each diner's selections are tracked separately, even though they are physically sitting at the same table.
+    \item \textbf{Joining Sessions for Shared Billing}: The application provides an option for customers to join a session created by another diner at the same table. This feature is particularly useful for groups who want to combine their orders into a single bill, allowing easy payment splitting without the need for manual calculations or multiple transactions.
+    \item \textbf{Separate Payments or Single Payment}: At the end of the meal, the group can decide whether to pay separately or together. If they opt for individual payments, each diner pays only for their ordered items. For a shared bill, the total cost is evenly divided among the participants in the joined session, or the payment can be split according to the specific items each person ordered, depending on the application's capabilities and settings.
+\end{itemize}
+
+\section{Admin Panel}
+\subsection{Features}
+\begin{itemize}
+    \item \textbf{Order Tracking}: Provides real-time tracking of customer orders, allowing staff to monitor and manage orders efficiently. This feature allows the adminstrator to keep track of which tables are occupied, the time since the last order, and the status of each order.
+    \item \textbf{Billing and Invoice Management}: The adminstrator can manage billing and invoices, for each table and would be able to see all the separate sessions that are on that table. This feature also allows the adminstrator to view and manage the billing and invoices for each table, including the ability to split bills and track payments. All paid and unpaid invoices are stored, allowing the adminstrator to view and manage them as needed. The invoices are designed to work with carbon printers as well.
+    \item \textbf{Sales Analysis}: The adminstrator can view sales data such as daily, weekly and monthly sales. The adminstrator can also view the most popular items and the least popular items. This feature also displays the peak hours of the day which along side with the popular items can be used to make decisions on inventory.
+    \item \textbf{Global Settings}: The adminstrator can manage global settings such as tax rates, menu themes and fonts. They can also change the name of the restaurant and the logo.
+\end{itemize}
+
+\section{Kitchen Display System}
+\subsection{Features}
+\begin{itemize}
+    \item \textbf{Real-time Order Display}: The kitchen display system provides a real-time display of incoming orders, allowing kitchen staff to prepare and manage orders. This feature allows the kitchen staff to view the orders as they come in, and mark them as in progress or completed.
+    \item \textbf{Separate Displays}: The system can display orders for different stations on separate screens, allowing staff to focus on their specific tasks. This feature allows the kitchen staff to view the orders that are relevant to their station, and manage them accordingly. Such as the bar which would only display drink orders.
+    \item \textbf{Time Warnings:} When the order time exceeds 15 minutes, the order would turn yellow and when it exceeds 25 minutes, the order would turn red. This feature allows the kitchen staff to prioritize orders based on their urgency.
+\end{itemize}
+
+\section{Floor Staff Display}
+\subsection{Features}
+\begin{itemize}
+    \item \textbf{Order Tracking}: The orders that have been prepared by the kitchen would be displayed.
+    \item \textbf{Table Numbers}: The table numbers of the orders would be displayed.
+    \item \textbf{Update Status}: Once the order has been served, the floor staff would be able to update the status of the order as served.
+\end{itemize}
+
+\section{Menu Management}
+\subsection{Features}
+\begin{itemize}
+    \item \textbf{Add New Items}: The system should allow restaurant staff to add new items to the menu, including specifying the name, description, price, category, tags which will be used for the recommendation algorithm, and availability of the item. This feature allows the restaurant staff to add new items to the menu as needed, and specify the details of each item.
+    \item \textbf{Update Items}: The system should allow restaurant staff to update existing items on the menu, including changing the name, description, price, category, tags, and availability of the item. This feature allows the restaurant staff to update the details of existing items on the menu as needed.
+    \item \textbf{Remove Items}: The system should allow restaurant staff to remove items from the menu that are no longer available. This feature allows the restaurant staff to remove items from the menu that are no longer available or have been discontinued.
+    \item \textbf{Create Categories}: The system should allow restaurant staff to create new categories for the menu, and assign items to specific categories. This feature allows the restaurant staff to organize the menu into different categories, making it easier for customers to navigate and find items.
+    \item \textbf{Manage Tags}: The system should allow restaurant staff to manage tags for each item, specifying the attributes of the item such as vegan, spicy, or gluten-free. This feature allows the restaurant staff to tag items with specific attributes, which will be used for the recommendation algorithm.
+\end{itemize}

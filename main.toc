@@ -7,11 +7,11 @@
 \contentsline {section}{\numberline {2.5}Current Implementations}{6}{section.2.5}%
 \contentsline {section}{\numberline {2.6}Research Gaps}{6}{section.2.6}%
 \contentsline {section}{\numberline {2.7}Conclusion}{7}{section.2.7}%
-\contentsline {chapter}{\numberline {3}Product Specification}{8}{chapter.3}%
+\contentsline {chapter}{\numberline {3}Methodology}{8}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Empirical Exploration}{9}{section.3.1}%
 \contentsline {section}{\numberline {3.2}Requirements}{10}{section.3.2}%
 \contentsline {section}{\numberline {3.3}Prototyping}{12}{section.3.3}%
-\contentsline {chapter}{\numberline {4}Methodology}{13}{chapter.4}%
+\contentsline {chapter}{\numberline {4}Implementation}{13}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Overview}{14}{section.4.1}%
 \contentsline {section}{\numberline {4.2}System Design}{14}{section.4.2}%
 \contentsline {subsection}{\numberline {4.2.1}Backend Architecture}{14}{subsection.4.2.1}%
@@ -27,33 +27,34 @@
 \contentsline {subsection}{\numberline {4.3.8}Invoice}{16}{subsection.4.3.8}%
 \contentsline {subsection}{\numberline {4.3.9}UserProfile}{16}{subsection.4.3.9}%
 \contentsline {subsection}{\numberline {4.3.10}UserTagCount}{16}{subsection.4.3.10}%
-\contentsline {section}{\numberline {4.4}Digital Menu Implementation}{16}{section.4.4}%
+\contentsline {section}{\numberline {4.4}Digital Menu Implementation}{17}{section.4.4}%
 \contentsline {subsection}{\numberline {4.4.1}Menu Display}{17}{subsection.4.4.1}%
 \contentsline {subsection}{\numberline {4.4.2}Order Placement}{17}{subsection.4.4.2}%
 \contentsline {subsection}{\numberline {4.4.3}Personalized Recommendations}{17}{subsection.4.4.3}%
 \contentsline {section}{\numberline {4.5}Recommendation Algorithm}{17}{section.4.5}%
-\contentsline {subsection}{\numberline {4.5.1}User Preferences and Order History Analysis}{17}{subsection.4.5.1}%
-\contentsline {subsection}{\numberline {4.5.2}Tag-Based Recommendations}{17}{subsection.4.5.2}%
-\contentsline {subsection}{\numberline {4.5.3}Price Sensitivity}{17}{subsection.4.5.3}%
-\contentsline {subsection}{\numberline {4.5.4}Personalized Recommendations}{17}{subsection.4.5.4}%
-\contentsline {subsection}{\numberline {4.5.5}Combining Recommendations for Combo Meals}{17}{subsection.4.5.5}%
-\contentsline {subsection}{\numberline {4.5.6}Example Usage}{18}{subsection.4.5.6}%
-\contentsline {section}{\numberline {4.6}Flexible Bill Sharing}{19}{section.4.6}%
-\contentsline {subsection}{\numberline {4.6.1}Design Considerations}{19}{subsection.4.6.1}%
-\contentsline {subsection}{\numberline {4.6.2}Implementation}{19}{subsection.4.6.2}%
-\contentsline {section}{\numberline {4.7}Admin Panel}{19}{section.4.7}%
-\contentsline {subsection}{\numberline {4.7.1}Features}{19}{subsection.4.7.1}%
-\contentsline {section}{\numberline {4.8}Kitchen Display System}{20}{section.4.8}%
-\contentsline {subsection}{\numberline {4.8.1}Features}{20}{subsection.4.8.1}%
-\contentsline {section}{\numberline {4.9}Floor Staff Display}{20}{section.4.9}%
-\contentsline {subsection}{\numberline {4.9.1}Features}{20}{subsection.4.9.1}%
-\contentsline {section}{\numberline {4.10}Menu Management}{20}{section.4.10}%
-\contentsline {subsection}{\numberline {4.10.1}Features}{20}{subsection.4.10.1}%
-\contentsline {chapter}{\numberline {5}Project Management}{22}{chapter.5}%
-\contentsline {chapter}{\numberline {6}Evaluation}{23}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Technical Evaluation}{24}{section.6.1}%
-\contentsline {subsection}{\numberline {6.1.1}API Testing}{24}{subsection.6.1.1}%
-\contentsline {subsection}{\numberline {6.1.2}POST Request Testing}{24}{subsection.6.1.2}%
-\contentsline {chapter}{\numberline {7}Discussion}{25}{chapter.7}%
-\contentsline {chapter}{\numberline {8}Conclusion}{26}{chapter.8}%
-\contentsline {chapter}{\numberline {9}Appendix}{27}{chapter.9}%
+\contentsline {subsection}{\numberline {4.5.1}Possible Implementations}{17}{subsection.4.5.1}%
+\contentsline {subsection}{\numberline {4.5.2}User Preferences and Order History Analysis}{18}{subsection.4.5.2}%
+\contentsline {subsection}{\numberline {4.5.3}Tag-Based Recommendations}{18}{subsection.4.5.3}%
+\contentsline {subsection}{\numberline {4.5.4}Price Sensitivity}{18}{subsection.4.5.4}%
+\contentsline {subsection}{\numberline {4.5.5}Personalized Recommendations}{18}{subsection.4.5.5}%
+\contentsline {subsection}{\numberline {4.5.6}Combining Recommendations for Combo Meals}{19}{subsection.4.5.6}%
+\contentsline {subsection}{\numberline {4.5.7}Example Usage}{19}{subsection.4.5.7}%
+\contentsline {section}{\numberline {4.6}Flexible Bill Sharing}{20}{section.4.6}%
+\contentsline {subsection}{\numberline {4.6.1}Design Considerations}{20}{subsection.4.6.1}%
+\contentsline {subsection}{\numberline {4.6.2}Implementation}{20}{subsection.4.6.2}%
+\contentsline {section}{\numberline {4.7}Admin Panel}{20}{section.4.7}%
+\contentsline {subsection}{\numberline {4.7.1}Features}{20}{subsection.4.7.1}%
+\contentsline {section}{\numberline {4.8}Kitchen Display System}{21}{section.4.8}%
+\contentsline {subsection}{\numberline {4.8.1}Features}{21}{subsection.4.8.1}%
+\contentsline {section}{\numberline {4.9}Floor Staff Display}{21}{section.4.9}%
+\contentsline {subsection}{\numberline {4.9.1}Features}{21}{subsection.4.9.1}%
+\contentsline {section}{\numberline {4.10}Menu Management}{21}{section.4.10}%
+\contentsline {subsection}{\numberline {4.10.1}Features}{21}{subsection.4.10.1}%
+\contentsline {chapter}{\numberline {5}Project Management}{23}{chapter.5}%
+\contentsline {chapter}{\numberline {6}Evaluation}{24}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Technical Evaluation}{25}{section.6.1}%
+\contentsline {subsection}{\numberline {6.1.1}API Testing}{25}{subsection.6.1.1}%
+\contentsline {subsection}{\numberline {6.1.2}POST Request Testing}{25}{subsection.6.1.2}%
+\contentsline {chapter}{\numberline {7}Discussion}{26}{chapter.7}%
+\contentsline {chapter}{\numberline {8}Conclusion}{27}{chapter.8}%
+\contentsline {chapter}{\numberline {9}Appendix}{28}{chapter.9}%

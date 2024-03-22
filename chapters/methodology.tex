@@ -1,243 +1,101 @@
-\section{Overview}
-This chapter outlines the systematic methodology employed to design, develop, and evaluate a web-based restaurant management application. The application leverages modern web technologies, including a React.js frontend \cite{15}, to enhance the dining experience by enabling customers to place orders using QR codes, receive personalized menu recommendations, and choose flexible bill-sharing options. The development process is guided by user-centered design principles, aiming to improve customer satisfaction and operational efficiency for restaurants.
+\section{Empirical Exploration}
+This section describes the preparatory empirical work performed for this project. It aims to define the scope of the final solution by presenting a preliminary discussion with restaurant owners and staff about their current practices and needs. The goal is to understand the current state of the art in the restaurant industry and to identify the main challenges and opportunities for the development of a new system. This section also presents the results of a preliminary survey conducted with potential users of the system, which aims to confirm the research gaps and the interest of new technology.
 
-\section{System Design}
-The web application is built using React.js \cite{15}frontend with Django backend \cite{16}, with a SQLite database \cite{17}. The frontend is responsible for rendering the user interface and handling user interactions, while the backend manages the business logic and data storage. The frontend and backend communicate via Djano RESTful APIs \cite{15}using Axios \cite{18} from React. The application can hosted on a cloud platform, such as AWS \cite{23} or Heroku \cite{24} or Railway \cite{25}.
+\subsection*{Interviews with Restaurant Owners and Staff}
+The first step in the empirical exploration was to conduct interviews with restaurant owners and staff. The goal was to understand the current state of the art in the restaurant industry and to identify the main challenges and opportunities for the development of a new system. The interviews were conducted with the help of a semi-structured questionnaire, which was designed to guide the conversation and ensure that all relevant topics were covered. The questionnaire was divided into three main sections: the current practices and challenges of the restaurant, the potential benefits and opportunities of a new system, and the main requirements and expectations for the system. The interviews were conducted with a total of 2 restaurant owners, one is the owner of a small restaurant in Portugal and the other is the owner of a multi-branch restaurant in Malaysia, and 6 restaurant staffs.
 
-\subsection{Backend Architecture}
+\subsection*{Interview with Restaurant Owners}
+The interviews with the restaurant owners aimed to identify their perspective of a restaurant owner to understand the current practices and challenges of the restaurant, the potential benefits and opportunities of a new system, and the main requirements and expectations for the system. Some of the questions that were asked during the interviews include:
 \begin{itemize}
-    \item \textbf{Models}: Django models define the database schema. Each model corresponds to a database table and is used for creating, retrieving, updating, and deleting records. For instance, models like Place, Category, MenuItem, and Order represent the core entities of the restaurant management system.
-    \item \textbf{Views}: Django views handle the business logic of the application. They receive web requests and return web responses. Views interact with models and return JSON responses (in the case of a REST API used by a React frontend) \cite{18}.
-    \item \textbf{URL Routing}: Django's URL routes incoming requests to the appropriate view based on the request URL. This is where you define URL patterns for your API endpoints.
-    \item \textbf{Django REST Framework}: For integrating with a React frontend, Django REST Framework (DRF) is used to build a RESTful API. DRF provides serializers for converting complex data types to and from JSON and viewsets for handling common API operations \cite{20}.
-    \item \textbf{Authentication and Authorization}: Django comes with a built-in authentication system, and DRF offers additional mechanisms for API authentication, such as token authentication.
-    \item \textbf{Database}: Django supports various databases like PostgreSQL, MySQL, SQLite, and Oracle. However, SQLite was chosen for its simplicity and ease of use \cite{17}.
+    \item What are the main challenges that you face in managing your restaurant?
+    \item What are the main benefits that you expect from a new system?
+    \item What are the main requirements and expectations that you have for the system?
+    \item What are their current practices in managing the restaurant?
+    \item What are the other opportunities that you think a new system can bring to your restaurant?
+    \item How do they deal with the bill splitting problem?
+    \item What do they think about having a system that would be able to help them with bill splitting?
+    \item What do they think about having personalised digital menus for their customers?
+    \item What do they think about my idea of the system?
 \end{itemize}
 
-\subsection{Frontend Architecture}
+\subsection*{Interview with Restaurant Staff}
+Similar questions were asked to the restaurant staffs, but the questions were tailored to their roles and responsibilities in the restaurant. The interviews aimed to identify the main challenges and opportunities that the staff face in their daily work, and to understand their main requirements and expectations for the system. Some of the questions that were asked during the interviews include:
 \begin{itemize}
-    \item \textbf{React Components}: The frontend is built using React.js. React components are used to create reusable UI elements, such as buttons, forms, and menus \cite{15}.
-    \item \textbf{State Management}: React's state and context API are used to manage the application's state, such as user authentication, order details, and session information \cite{19}.
-    \item \textbf{Routing}: React Router is used for client-side routing, allowing the application to navigate between different views without a page refresh \cite{22}.
-    \item \textbf{API Integration}: Axios is used to make HTTP requests to the Django backend, enabling the frontend to fetch and send data to the server.
-    \item \textbf{User Interface}: The frontend is designed to be responsive and user-friendly, with a focus on providing an intuitive and visually appealing experience for customers.
-    \item \textbf{Bulma SCSS}: On top of using React Components, additional Bulma SCSS components were used to style the application, this allows the application to be responsive and have uniform styling \cite{22}.
+    \item What are the main challenges that you face in your daily work?
+    \item What are the main benefits that you expect from a new system?
+    \item What are the main requirements and expectations that you have for the system?
+    \item What are their current practices in managing the restaurant?
+    \item What are the other opportunities that you think a new system can bring to your restaurant?
+    \item How do they deal with group orders and bill splitting?
+    \item What do they think about having a system that would be able to help them with bill splitting?
+    \item What do they think about having personalised digital menus for their customers?
+    \item What do they think about my idea of the system?
 \end{itemize}
 
-\section{Database Architecture}
-\includegraphics[width=1\textwidth]{images/databasediagram.png}
-
-\subsection{Place}
-Represents a restaurant or place that uses the app. It includes details like the owner (linked to the Django \texttt{User} model), name, image, number of tables, and aesthetic customizations (font and color). A new field, \texttt{tax\_amount}, has been added to manage tax calculations.
-
-\subsection{Category}
-Organizes menu items into categories (e.g., appetizers, entrees, desserts) for each place. This helps in structuring the menu for easier navigation by the customers.
-
-\subsection{MenuItem}
-Details about each menu item, including the place it belongs to, its category, name, description, price, and availability. It also specifies whether the item is a drink and allows for tagging (e.g., vegan, spicy) through a many-to-many relationship with the \texttt{Tag} model.
-
-\subsection{Tag}
-Used to label menu items with specific attributes, enhancing the ability to offer personalized recommendations based on customer preferences.
-
-\subsection{UserSession}
-Tracks active sessions by customers, including their email, session ID, and table number. It supports functionalities like order tracking and session management.
-
-\subsection{Order}
-Records details of customer orders, including the items ordered (linked through \texttt{OrderItem}), the table and place, payment information, and status. It also tracks the session and customer email.
-
-\subsection{OrderItem}
-A through model for the many-to-many relationship between \texttt{Order} and \texttt{MenuItem}, capturing the quantity of each menu item ordered.
-
-\subsection{Invoice}
-Manages billing information, including the items ordered, total amount, and payment status. It introduces the \texttt{items} field as a JSON structure to store ordered items, allowing for flexible representation of order details.
-
-\subsection{UserProfile}
-Represents a user's profile with a unique email. It is linked to \texttt{Tag} through \texttt{UserTagCount} to track preference metrics.
-
-\subsection{UserTagCount}
-Tracks the count of tags associated with a user's orders, facilitating the personalization engine to recommend items based on preferred tags.
-
-% \section{Personalization and Recommendations}
-% The schema supports advanced personalization features:
-% \begin{itemize}
-%     \item \textbf{Personalized Menu Recommendations:} By analyzing a user's order history and preferences (e.g., most ordered tags, preferred price range), the system can recommend menu items that match their taste. This is achieved through methods in the \texttt{UserProfile} model, which calculate preferences based on past orders and tag popularity.
-%     \item \textbf{Recommendation Algorithms:} The application uses detailed methods within \texttt{UserProfile} to recommend not only individual food and drink items but also combo meals by creating all possible combinations of recommended food and drink items.
-% \end{itemize}
-
-% \section{Key Features and Relationships}
-% \begin{itemize}
-%     \item The system uses Django's built-in \texttt{User} model for authentication and ownership, linking restaurant places directly to user accounts.
-%     \item The \texttt{ForeignKey} and \texttt{ManyToManyField} relationships are utilized extensively to create a network of interconnected entities, enabling complex queries for personalization, order tracking, and session management.
-%     \item The application's database design is geared towards enhancing the user experience through features like personalized recommendations, flexible ordering sessions, and detailed order and billing management.
-%     \item The use of methods like \texttt{create\_session\_for\_email} in \texttt{UserSession} and recommendation algorithms in \texttt{UserProfile} demonstrate the application's dynamic and user-focused functionality.
-% \end{itemize}
-% This architecture facilitates a rich, interactive, and personalized user experience in the restaurant management domain, blending traditional e-commerce models with innovative features tailored to the hospitality industry.
-
-\section {Digital Menu Implementation}
-QR codes placed on each table serve as the entry point for customers to access the menu and place orders. Upon scanning the QR code with a smartphone, customers are directed to a web interface where they can browse the menu, make selections, and specify their order preferences.
-\subsection{Menu Display}
-The menu is organized into categories, with each item displaying its name, description, price, and availability. The user interface is designed to be visually appealing and easy to navigate, with a responsive layout that adapts to different screen sizes.
-\subsection{Order Placement}
-Customers can add items to their order by clicking on the menu items and specifying the quantity. The system tracks the items ordered and the customer's session, allowing for order tracking and billing.
-\subsection{Personalized Recommendations}
-The application uses the customer's order history and preferences to recommend menu items that match their taste. This is achieved through methods in the \texttt{UserProfile} model, which calculate preferences based on past orders and tag popularity. The algorithm takes into account the most ordered tags and preferred price range to recommend items that align with the customer's preferences.
-
-\section{Recommendation Algorithm}
-The recommendation algorithm embedded within the \texttt{UserProfile} model of our restaurant management application is designed to offer personalized menu suggestions to users. It analyzes users' past orders, preferences, and price sensitivity to recommend items that align with their tastes.
-
-\subsection{User Preferences and Order History Analysis}
-\begin{itemize}
-    \item The algorithm commences by evaluating the user's previous orders to deduce preferences. This involves:
-    \begin{itemize}
-        \item Calculating the average price of the items ordered to establish a preferred price range.
-        \item Identifying the most ordered tags to understand the user's food preferences.
-    \end{itemize}
-\end{itemize}
-
-\subsection{Tag-Based Recommendations}
+\subsection*{Surveys With Customers}
+This survey aimed to understand dining habits, preferences, and challenges faced by people when eating out, particularly focusing on the use of QR code ordering systems, group ordering dynamics, bill splitting difficulties, and interest in technological solutions to these issues. The respondents varied in their frequency of dining out, ranging from daily to a few times a month. The survey was conducted with a total of 43 respondents. The survey questions are as follows:
 
 \begin{itemize}
-    \item Users are linked to tags via the \texttt{UserTagCount} model, reflecting their taste preferences.
-    \item Menu items are scored based on their relevance to the user's preferred tags, with higher scores for better-matched items.
+    \item How often do you dine out at restaurants?
+    \item Have you ever ordered food in a restaurant using a QR code?
+    \item If yes, how would you rate the experience? (Only answer if you selected "Yes" above.)
+    \item When dining with others, how do you prefer to place your order?
+    \item What challenges have you faced when ordering food in restaurants?
+    \item How do you currently split bills when dining out with friends or family?
+    \item How challenging is it to split bills when ordering as a group?
+    \item How interested would you be in an app that allows you to order individually or as a group and easily split the bill directly through the app?
+    \item Would you be interested in a feature that recommends menu items based on your past orders?
+    \item Do wish that restaurants have a personalized menu just for your preferences?
 \end{itemize}
 
-\subsection{Price Sensitivity}
+A large portion of respondents has utilized QR code ordering systems, with experiences rating from "Very Satisfactory" to "Unsatisfactory", mostly leaning towards Satisfactory. Most prefer to place orders as a group, either opting for one bill for everyone or paying individually, yet the common practice is to calculate everyone's share after a single person pays the bill. Challenges identified include difficulty in getting the server's attention, limited time to decide on the menu, specifying dietary restrictions, and the inconvenience of splitting bills.
+
+Regarding bill splitting, a large number of respondents found it somewhat to very challenging, indicating a potential area for improvement in dining experiences. On top of that, high interest was expressed in an solution that covers individual or group ordering and simplifies bill splitting.
+
+Furthermore, the idea of personalised menu recommendations based on past orders received strong support, all respondents were interested for personalized menus tailored to their preferences.
+
+To conclude this survey, the results suggest that there is a demand for a system that can help with group ordering and bill splitting, and that can provide personalized digital menus to customers. The survey also aligns with the findings from the literature review that there is a growing trend in the use of digital ordering systems in restaurants, and that there is still room for improvement.
+
+\section{Requirements}
+This section presents the requirements for the system, which were identified based on the empirical exploration and the literature review. The requirements are divided into functional and non-functional requirements.
+
+\subsection*{Functional Requirements}
+The functional requirements describe the main features and capabilities of the system. They were identified based on the interviews with restaurant owners and staff, and the survey with customers. The main functional requirements for the system are as follows:
 
 \begin{itemize}
-    \item The algorithm adjusts scores for items within the user's preferred price range, favoring those that align with past spending habits.
+    \item \textbf{QR Code Ordering:} The system should allow customers to place orders by scanning a QR code on their table, which will take them to a digital menu.
+    \item \textbf{Group Ordering:} Use sessions to allow customers to place orders as a group, and to split the bill easily. Additional customers can join the existing sessions or create a new session.
+    \item \textbf{Bill Splitting:} The adminstrator would be able to see all session orders on a table and would be able to split the bill automatically.
+    \item \textbf{Personalised Digital Menus:} The system should provide customers with personalised digital menus, which recommend menu items based on their past orders and preferences.
+    \item \textbf{Shopping Cart:} The system should allow customers to add items to a shopping cart, and to review and modify their orders before submitting them. The order is submitted to the server containing the table number and the user's session.
+    \item \textbf{Table Management:} The adminstrator would be able to add and remove tables, and print QR codes for each table.
+    \item \textbf{Order Management:} The adminstrator would be able to view all orders from all the tables and track status of the orders. The system would show the time since the order was placed.
+    \item \textbf{Kitchen Display System:} The system should provide a kitchen display system to help kitchen staff manage orders and track their status. Have separate views for different sections of the kitchen. Example, Bar and Kitchen.
+    \item \textbf{Floor Staff Management:} The system should provide a floor staff orders that needs to be served and the table numbers of orders.
+    \item \textbf{Menu Management:} The system should allow restaurant staff to manage the digital menu, add new items, update prices, and remove items as needed.
+    \item \textbf{Customer Management:} The system should allow restaurant staff to manage customer accounts, view customer preferences and past orders, and update customer information as needed.
+    \item \textbf{Settings:} The system should allow restaurant staff to configure settings such as tax rates, name of restaurant, restaurant logo, menu theme.
+    \item \textbf{Analytics:} The system should provide restaurant owners with analytics and reports on customer orders, preferences, and trends, to help them make data-driven decisions.
+
 \end{itemize}
 
-\subsection{Personalized Recommendations}
+\subsection*{Non-Functional Requirements}
+The non-functional requirements describe the quality attributes of the system, such as performance, security, and usability.
 
 \begin{itemize}
-    \item For food items: Excludes drinks, scoring food items based on tag preferences and price sensitivity.
-    \item For drink items: Similar process, but focuses solely on beverages, tailoring recommendations accordingly.
+    \item \textbf{Performance:} The system should be able to handle a large number of users and orders, and should be able to process orders quickly and efficiently.
+    \item \textbf{Security:} The system should be secure, and should protect customer data and payment information. It should also be able to prevent unauthorized access to the system. There should be a clear separation between the customer and the restaurant staff.
+    \item \textbf{Usability:} The system should be easy to use, and should provide a user-friendly interface for both customers and restaurant staff.
+    \item \textbf{Reliability:} The system should be reliable, and should be able to handle errors and failures gracefully. It should also be able to recover from failures quickly and without data loss.
+    \item \textbf{Scalability:} The system should be able to scale to accommodate a growing number of users and orders, and should be able to handle increased demand without a significant decrease in performance.
+    \item \textbf{Accessibility:} The system should be accessible to people with disabilities, and should provide support for assistive technologies such as screen readers and voice recognition software.
+    \item \textbf{Compatibility:} The system should be compatible with a wide range of devices and operating systems, and should be able to run on both desktop and mobile platforms.
+    \item \textbf{Maintainability:} The system should be easy to maintain, and should be able to accommodate changes and updates without a significant impact on the system's performance or reliability.
+    \item \textbf{Cost:} The system should be cost-effective, and should provide good value for money. It should also be able to reduce costs for restaurant owners and staff, and should be able to increase revenue and customer satisfaction.
+    \item \textbf{Ease of Deployment:} The system should be easy to deploy, and should be able to run on a wide range of hardware and software platforms. It should also be able to integrate with existing systems and technologies.
+    \item \textbf{Environmental:} The system should be environmentally friendly, and should be able to reduce waste and energy consumption. It should also be able to promote sustainable practices and support environmental conservation efforts.
+    
 \end{itemize}
 
-\subsection{Combining Recommendations for Combo Meals}
-
-\begin{itemize}
-    \item Creates combo meal suggestions by pairing the  top food and drink recommendations.
-\end{itemize}
-
-\subsection{Example Usage}
-\subsection*{Step 1: Determining the Preferred Price Range}
-
-Assume the user has ordered the following items:
-
-\begin{itemize}
-    \item Pizza: \$12 (Quantity: 2)
-    \item Burger: \$9 (Quantity: 1)
-    \item Salad: \$7 (Quantity: 3)
-\end{itemize}
-
-\subsection*{Calculation}
-
-\begin{verbatim}
-Total spent on Pizza = $12 * 2 = $24
-Total spent on Burger = $9 * 1 = $9
-Total spent on Salad = $7 * 3 = $21
-
-Total spent = $24 + $9 + $21 = $54
-Total quantity of items ordered = 2 + 1 + 3 = 6
-
-Average price per item = Total spent / Total quantity = $54 / 6 = $9
-\end{verbatim}
-
-Preferred price range is calculated as ±20 percent of the average price:
-\begin{verbatim}
-Lower bound = $9 * 0.8 = $7.20
-Upper bound = $9 * 1.2 = $10.80
-\end{verbatim}
-
-\subsection*{Step 2: Identifying Most Ordered Tags}
-
-Given tags for each item:
-\begin{itemize}
-    \item Pizza: ["Italian", "Cheese"]
-    \item Burger: ["American", "Beef"]
-    \item Salad: ["Vegetarian", "Healthy"]
-\end{itemize}
-
-The most ordered tags based on quantity are "Vegetarian" and "Healthy".
-
-\subsection*{Step 3: Scoring and Recommending Menu Items}
-
-New menu items to recommend:
-\begin{itemize}
-    \item Spaghetti: \$8 ["Italian", "Vegetarian"]
-    \item Chicken Wrap: \$10 ["Healthy", "Chicken"]
-    \item Fish Tacos: \$11 ["Seafood"]
-    \item Veggie Burger: \$9 ["Vegetarian", "American"]
-\end{itemize}
-
-\subsection*{Scoring}
-
-Spaghetti scores high for matching "Vegetarian" and being within the price range.
-Chicken Wrap scores for "Healthy" and being within the price range.
-Fish Tacos score lower due to being outside the price range and no matching tags.
-Veggie Burger scores for "Vegetarian" and being within the price range.
-
-
-\subsection*{Results}
-
-Based on the scoring, the recommended items in order are:
-\begin{enumerate}
-    \item Spaghetti
-    \item Chicken Wrap
-    \item Veggie Burger
-\end{enumerate}
-
-\section{Flexible Bill Sharing}
-
-This section outlines the systematic steps taken to design, implement, and evaluate this bill splitting implementation.
-
-\subsection{Design Considerations}
-
-\begin{itemize}
-    \item \textbf{User Experience}: A primary focus was to ensure an intuitive and hassle-free interaction with the bill-sharing feature, allowing customers to easily choose between individual payments or sharing the bill with others.
-    \item \textbf{Accuracy and Flexibility}: The feature needed to accurately calculate and split the bill according to the specific orders and preferences of the diners, providing flexibility in how the bill could be shared.
-    \item \textbf{Session Management}: The system has to manage individual ordering sessions and group sessions, allowing customers to join and leave sessions as needed, while ensuring accurate tracking of orders and payments.
-\end{itemize}
-
-\subsection{Implementation}
-\begin{itemize}
-    \item \textbf{Order Placement via individual Sessions}: When customers scan the QR code at their table, they have the option to create an individual ordering session by entering their email address. This process ensures that each diner's selections are tracked separately, even though they are physically sitting at the same table.
-    \item \textbf{Joining Sessions for Shared Billing}: The application provides an option for customers to join a session created by another diner at the same table. This feature is particularly useful for groups who want to combine their orders into a single bill, allowing easy payment splitting without the need for manual calculations or multiple transactions.
-    \item \textbf{Separate Payments or Single Payment}: At the end of the meal, the group can decide whether to pay separately or together. If they opt for individual payments, each diner pays only for their ordered items. For a shared bill, the total cost is evenly divided among the participants in the joined session, or the payment can be split according to the specific items each person ordered, depending on the application's capabilities and settings.
-\end{itemize}
-
-\section{Admin Panel}
-\subsection{Features}
-\begin{itemize}
-    \item \textbf{Order Tracking}: Provides real-time tracking of customer orders, allowing staff to monitor and manage orders efficiently. This feature allows the adminstrator to keep track of which tables are occupied, the time since the last order, and the status of each order.
-    \item \textbf{Billing and Invoice Management}: The adminstrator can manage billing and invoices, for each table and would be able to see all the separate sessions that are on that table. This feature also allows the adminstrator to view and manage the billing and invoices for each table, including the ability to split bills and track payments. All paid and unpaid invoices are stored, allowing the adminstrator to view and manage them as needed. The invoices are designed to work with carbon printers as well.
-    \item \textbf{Sales Analysis}: The adminstrator can view sales data such as daily, weekly and monthly sales. The adminstrator can also view the most popular items and the least popular items. This feature also displays the peak hours of the day which along side with the popular items can be used to make decisions on inventory.
-    \item \textbf{Global Settings}: The adminstrator can manage global settings such as tax rates, menu themes and fonts. They can also change the name of the restaurant and the logo.
-\end{itemize}
-
-\section{Kitchen Display System}
-\subsection{Features}
-\begin{itemize}
-    \item \textbf{Real-time Order Display}: The kitchen display system provides a real-time display of incoming orders, allowing kitchen staff to prepare and manage orders. This feature allows the kitchen staff to view the orders as they come in, and mark them as in progress or completed.
-    \item \textbf{Separate Displays}: The system can display orders for different stations on separate screens, allowing staff to focus on their specific tasks. This feature allows the kitchen staff to view the orders that are relevant to their station, and manage them accordingly. Such as the bar which would only display drink orders.
-    \item \textbf{Time Warnings:} When the order time exceeds 15 minutes, the order would turn yellow and when it exceeds 25 minutes, the order would turn red. This feature allows the kitchen staff to prioritize orders based on their urgency.
-\end{itemize}
-
-\section{Floor Staff Display}
-\subsection{Features}
-\begin{itemize}
-    \item \textbf{Order Tracking}: The orders that have been prepared by the kitchen would be displayed.
-    \item \textbf{Table Numbers}: The table numbers of the orders would be displayed.
-    \item \textbf{Update Status}: Once the order has been served, the floor staff would be able to update the status of the order as served.
-\end{itemize}
-
-\section{Menu Management}
-\subsection{Features}
-\begin{itemize}
-    \item \textbf{Add New Items}: The system should allow restaurant staff to add new items to the menu, including specifying the name, description, price, category, tags which will be used for the recommendation algorithm, and availability of the item. This feature allows the restaurant staff to add new items to the menu as needed, and specify the details of each item.
-    \item \textbf{Update Items}: The system should allow restaurant staff to update existing items on the menu, including changing the name, description, price, category, tags, and availability of the item. This feature allows the restaurant staff to update the details of existing items on the menu as needed.
-    \item \textbf{Remove Items}: The system should allow restaurant staff to remove items from the menu that are no longer available. This feature allows the restaurant staff to remove items from the menu that are no longer available or have been discontinued.
-    \item \textbf{Create Categories}: The system should allow restaurant staff to create new categories for the menu, and assign items to specific categories. This feature allows the restaurant staff to organize the menu into different categories, making it easier for customers to navigate and find items.
-    \item \textbf{Manage Tags}: The system should allow restaurant staff to manage tags for each item, specifying the attributes of the item such as vegan, spicy, or gluten-free. This feature allows the restaurant staff to tag items with specific attributes, which will be used for the recommendation algorithm.
-\end{itemize}
+\section{Prototyping}
+This section presents the prototyping process for the system, which was performed to validate the requirements and to explore the main features and capabilities of the system.
