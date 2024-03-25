@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.20)  22 MAR 2024 16:26
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.20)  24 MAR 2024 16:11
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -319,7 +319,7 @@ Chapter 4.
 \openout2 = `chapters/implementation.aux'.
 
  (./chapters/implementation.tex
-<images/databasediagram.png, id=442, 618.31pt x 931.48pt>
+<images/databasediagram.png, id=462, 618.31pt x 931.48pt>
 File: images/databasediagram.png Graphic file (type png)
 <use images/databasediagram.png>
 Package pdftex.def Info: images/databasediagram.png  used on input line 15.
@@ -339,21 +339,21 @@ Chapter 6.
 ]
 \openout2 = `chapters/evaluation.aux'.
 
- (./chapters/evaluation.tex) [25
+ (./chapters/evaluation.tex [25
 
-]
+]) [26]
 Chapter 7.
-[26
+[27
 
 
 
 ]
 Chapter 8.
-[27
+[28
 
 ]
 Chapter 9.
-[28
+[29
 
 ]
 \openout2 = `chapters/appendix.aux'.
@@ -413,28 +413,68 @@ Overfull \hbox (68.51006pt too wide) in paragraph at lines 72--73
 \OT1/cmtt/m/n/10 Customer-[]Acceptance-[]of-[]QR-[]Menu-[]Ordering-[]System-[]in-[]Luxury-[]Restaurants-[]A-[]study-[]of-[]Xian-[]China .
  []
 
-[29
+[30
 
 
 
 
-] [30] (./main.aux (./chapters/literaturereview.aux) (./chapters/methodology.aux) (./chapters/implementation.aux) (./chapters/evaluation.aux) (./chapters/appendix.aux))
+]
+Underfull \hbox (badness 1803) in paragraph at lines 117--118
+[]\OT1/cmr/m/n/10 Real Python, \Build a Rec-om-men-da-tion En-gine With Col-lab-o-ra-tive Fil-ter-ing," Re-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 117--118
+\OT1/cmr/m/n/10 alpython.com, Jul. 10, 2019. https://realpython.com/build-recommendation-engine-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 119--120
+[]\OT1/cmr/m/n/10 \What Is Col-lab-o-ra-tive Fil-ter-ing: A Sim-ple In-tro-duc-tion," Built In, 2019.
+ []
+
+
+Underfull \hbox (badness 5893) in paragraph at lines 119--120
+\OT1/cmr/m/n/10 https://builtin.com/data-science/collaborative-filtering-recommender-system (ac-cessed Mar.
+ []
+
+
+Underfull \hbox (badness 5431) in paragraph at lines 121--122
+\OT1/cmr/m/n/10 2022. https://www.analyticsvidhya.com/blog/2022/02/introduction-to-collaborative-filtering/
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 127--128
+\OT1/cmr/m/n/10 Apr. 30, 2021. https://medium.com/sciforce/deep-learning-based-recommender-systems-
+ []
+
+[31]
+Underfull \hbox (badness 5345) in paragraph at lines 129--130
+\OT1/cmr/m/n/10 gale-shapley-stable-matching-algorithm-and-its-time-complexity-4b814ee2642 (ac-cessed Mar.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 131--132
+[]\OT1/cmr/m/n/10 \How Net-flix's Rec-om-men-da-tions Sys-tem Works," Help Cen-ter, 2024.
+ []
+
+[32{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}] (./main.aux (./chapters/literaturereview.aux) (./chapters/methodology.aux) (./chapters/implementation.aux) (./chapters/evaluation.aux) (./chapters/appendix.aux))
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 24048B05BF61731CE3FCD104C248C5F9;8679.
+(rerunfilecheck)             Checksum: B30F69F40FB3C16A6C501935260F5B34;9306.
  ) 
 Here is how much of TeX's memory you used:
- 9009 strings out of 476025
- 145529 string characters out of 5790016
- 1866388 words of memory out of 5000000
- 29200 multiletter control sequences out of 15000+600000
- 518257 words of font info for 52 fonts, out of 8000000 for 9000
+ 9044 strings out of 476025
+ 145826 string characters out of 5790016
+ 1865388 words of memory out of 5000000
+ 29216 multiletter control sequences out of 15000+600000
+ 519020 words of font info for 53 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,6n,76p,1230b,541s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on main.pdf (32 pages, 250839 bytes).
+Output written on main.pdf (34 pages, 258871 bytes).
 PDF statistics:
- 653 PDF objects out of 1000 (max. 8388607)
- 597 compressed objects within 6 object streams
- 141 named destinations out of 1000 (max. 500000)
- 486 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 723 PDF objects out of 1000 (max. 8388607)
+ 663 compressed objects within 7 object streams
+ 158 named destinations out of 1000 (max. 500000)
+ 518 words of extra memory for PDF output out of 10000 (max. 10000000)
 

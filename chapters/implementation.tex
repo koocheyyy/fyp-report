@@ -69,62 +69,45 @@ Customers can add items to their order by clicking on the menu items and specify
 \subsection{Personalized Recommendations}
 The application uses the customer's order history and preferences to recommend menu items that match their taste. This is achieved through methods in the \texttt{UserProfile} model, which calculate preferences based on past orders and tag popularity. The algorithm takes into account the most ordered tags and preferred price range to recommend items that align with the customer's preferences.
 
-\section{Recommendation Algorithm}
+\section{Reocommender Algorithm}
 The recommendation algorithm embedded within the \texttt{UserProfile} model of our restaurant management application is designed to offer personalized menu suggestions to users. It analyzes users' past orders, preferences, and price sensitivity to recommend items that align with their tastes.
 
 \subsection{Possible Implementations}
 The recommendation algorithm can be implemented in several ways. Here are some of the considered directions.
 
 \subsection*{Collaborative Filtering}
-Collaborative filtering recommends items based on the preferences of similar users. It identifies users with similar tastes and suggests items that they have liked. This method is effective for discovering new items based on the preferences of a user's peers.
+Collaborative filtering recommends items based on the preferences of similar users. It identifies users with similar tastes and suggests items that they have liked. This method is effective for discovering new items based on the preferences of a user's peers \cite{26} \cite{27}.
 
 \subsection*{Content-Based Filtering}
-Content-based filtering uses item features to recommend other items similar to what the user likes, based on their previous actions or explicit feedback. It is based on the idea that if a user likes a particular item, they will also like items that are similar to it. The algorithm uses attributes of the items to recommend other items with similar attributes. User profiles are created based on the items they have interacted with, and recommendations are made based on the similarity between the user profile and the item attributes.
+Content-based filtering uses item features to recommend other items similar to what the user likes, based on their previous actions or explicit feedback. It is based on the idea that if a user likes a particular item, they will also like items that are similar to it. The algorithm uses attributes of the items to recommend other items with similar attributes. User profiles are created based on the items they have interacted with, and recommendations are made based on the similarity between the user profile and the item attributes \cite{29}.
 
 \subsection*{Hybrid Filtering}
-Hybrid Filtering combines collaborative and content-based filtering to leverage the strengths of both approaches. By combining the two methods, the system can provide more accurate and diverse recommendations, addressing the limitations of individual techniques.
-
-\subsection*{Matrix Factorization}
-Matrix Factorization is a collaborative filtering technique that decomposes the user-item interaction matrix into lower-dimensional matrices, capturing latent features of users and items. By learning these latent features, the algorithm can predict user preferences for items they have not interacted with.
+Hybrid Filtering combines collaborative and content-based filtering to leverage the strengths of both approaches. By combining the two methods, the system can provide more accurate and diverse recommendations, addressing the limitations of individual techniques \cite{30}. This method is used by web services such as Netflix and Amazon to provide personalized recommendations to users \cite{33}.
 
 \subsection*{Deep Learning Models}
-Neural networks can be used to learn complex patterns in user-item interactions, enabling more accurate and personalized recommendations. These models can capture non-linear relationships between users and items, improving the quality of recommendations. However, they require large amounts of data and computational resources.
+Neural networks can be used to learn complex patterns in user-item interactions, enabling more accurate and personalized recommendations. These models can capture non-linear relationships between users and items, improving the quality of recommendations. However, they require large amounts of data and computational resources \cite{31}.
 
 \subsection*{Stable Matching Algorithms}
-Stable matching algorithms can be used to match users with items based on their preferences and constraints. By formulating the recommendation problem as a stable matching problem, the system can generate optimal matches between users and items, ensuring fairness and efficiency. However, this method requires additional feedback from users to determine if it was a good match which can be inconvenient for the user.
+Stable matching algorithms can be used to match users with items based on their preferences and constraints. By formulating the recommendation problem as a stable matching problem, the system can generate optimal matches between users and items, ensuring fairness and efficiency \cite{32}. However, this method requires additional feedback from users to determine if it was a good match which can be inconvenient for the user.
 
 \subsection*{Conclusion}
-The most suitable recommendation algorithm to be used in this scenario would be Content-Based Filtering. The algorithm can leverage the attributes of menu items and user preferences to recommend items that align with the user's taste profile. By analyzing the tags associated with each item and the user's preferred tags, the system can provide personalized recommendations that cater to the user's preferences. This approach is effective for recommending items based on the user's past interactions and preferences, enhancing the user experience and increasing customer satisfaction. Furthermore, the algorithm does not require additional data or feedback from other users, making it a practical and efficient solution for personalized menu recommendations.
+The approach that has been chosen for this implementation is Hybrid Filtering. The system combines collaborative and content-based filtering to provide more accurate and diverse recommendations. While not using the traditional user-to-user collaborative filtering, the system uses the user's past orders and preferences to recommend items that align with their tastes. This way the customer does not need to provide a preference when they first make their order and the recommender system can instead learn from their past orders. This method leverages the strengths of both collaborative and content-based filtering. The algorithm can use the attributes of menu items and user preferences based of their past orders to recommend items that align with the user's taste profile.
 
 
 \subsection{User Preferences and Order History Analysis}
 The algorithm analyses the user's previous orders to deduce their preferences. The algorithm calculates the average price of the items ordered to establish a preferred price range and identifies the most ordered tags to understand the user's food preferences. This information is then used to score and recommend menu items that align with the user's taste.
 
 \subsection{Tag-Based Recommendations}
-
-\begin{itemize}
-    \item Users are linked to tags via the \texttt{UserTagCount} model, reflecting their taste preferences.
-    \item Menu items are scored based on their relevance to the user's preferred tags, with higher scores for better-matched items.
-\end{itemize}
+The algorithm scores menu items based on the user's preferred tags and price sensitivity. The tags represent the attributes of the items, such as vegetarian, healthy, or spicy. By matching the tags of the menu items with the user's preferred tags, the algorithm can recommend items that are likely to appeal to the user. The reason behind the choice to use tags 
 
 \subsection{Price Sensitivity}
-
-\begin{itemize}
-    \item The algorithm adjusts scores for items within the user's preferred price range, favoring those that align with past spending habits.
-\end{itemize}
+The algorithm calculates the user's preferred price range based on their past orders. By analyzing the average price of the items ordered, the system establishes a price range that the user is comfortable with. This information is used to filter out menu items that fall outside the user's price range, ensuring that the recommendations are tailored to the user's budget. The relationship between price and food choice has been highlighted. Research papers \cite{34} and \cite{35} has indicated that a large percentage of the population prioritizes price as the most determining factor in food choice, often opting for cheaper food regardless of its health or environmental impact.
 
 \subsection{Personalized Recommendations}
-
-\begin{itemize}
-    \item For food items: Excludes drinks, scoring food items based on tag preferences and price sensitivity.
-    \item For drink items: Similar process, but focuses solely on beverages, tailoring recommendations accordingly.
-\end{itemize}
+The recommendation algorithm scores menu items based on the user's preferred tags and price sensitivity. By matching the tags of the menu items with the user's preferred tags and boosting the score if the price of the food item fits within the user's preferred price range, the algorithm can recommend items that are likely to appeal to the user. The algorithm ranks the menu items based on the score, providing personalized recommendations that align with the user's taste profile. It does the same for both food and drink items
 
 \subsection{Combining Recommendations for Combo Meals}
-
-\begin{itemize}
-    \item Creates combo meal suggestions by pairing the  top food and drink recommendations.
-\end{itemize}
+The recommendation algorithm goes a step further by creating all possible combinations of recommended food and drink items to suggest combo meals to the user. By combining the top recommended food and drink items. This would save the customer time when ordering and would also increase the chances of the customer ordering more items. This is a common strategy used by restaurants to increase sales.
 
 \subsection{Example Usage}
 \subsection*{Step 1: Determining the Preferred Price Range}
