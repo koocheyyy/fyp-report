@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.20)  24 MAR 2024 16:11
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.20)  28 MAR 2024 00:06
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -167,51 +167,77 @@ Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 \Gm@layouthoffset=\dimen153
 \Gm@layoutvoffset=\dimen154
 \Gm@dimlist=\toks17
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/tools/tabularx.sty
+Package: tabularx 2020/01/15 v2.11c `tabularx' package (DPC)
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/tools/array.sty
+Package: array 2022/09/04 v2.5g Tabular extension package (FMi)
+\col@sep=\dimen155
+\ar@mcellbox=\box51
+\extrarowheight=\dimen156
+\NC@list=\toks18
+\extratabsurround=\skip51
+\backup@length=\skip52
+\ar@cellbox=\box52
+)
+\TX@col@width=\dimen157
+\TX@old@table=\dimen158
+\TX@old@col=\dimen159
+\TX@target=\dimen160
+\TX@delta=\dimen161
+\TX@cols=\count274
+\TX@ftn=\toks19
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count275
+\float@exts=\toks20
+\float@box=\box53
+\@float@everytoks=\toks21
+\@floatcapt=\box54
 ) (/usr/local/texlive/2023/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count274
-\l__pdf_internal_box=\box51
-) (./main.aux (./chapters/literaturereview.aux) (./chapters/methodology.aux) (./chapters/implementation.aux) (./chapters/evaluation.aux) (./chapters/appendix.aux))
+\l__color_backend_stack_int=\count276
+\l__pdf_internal_box=\box55
+) (./main.aux (./chapters/introduction.aux) (./chapters/literaturereview.aux) (./chapters/methodology.aux) (./chapters/implementation.aux) (./chapters/evaluation.aux) (./chapters/appendix.aux))
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
  (/usr/local/texlive/2023/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count275
-\scratchdimen=\dimen155
-\scratchbox=\box52
-\nofMPsegments=\count276
-\nofMParguments=\count277
-\everyMPshowfont=\toks18
-\MPscratchCnt=\count278
-\MPscratchDim=\dimen156
-\MPnumerator=\count279
-\makeMPintoPDFobject=\count280
-\everyMPtoPDFconversion=\toks19
+\scratchcounter=\count277
+\scratchdimen=\dimen162
+\scratchbox=\box56
+\nofMPsegments=\count278
+\nofMParguments=\count279
+\everyMPshowfont=\toks22
+\MPscratchCnt=\count280
+\MPscratchDim=\dimen163
+\MPnumerator=\count281
+\makeMPintoPDFobject=\count282
+\everyMPtoPDFconversion=\toks23
 ) (/usr/local/texlive/2023/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-Package hyperref Info: Link coloring OFF on input line 23.
+Package hyperref Info: Link coloring OFF on input line 25.
  (./main.out) (./main.out)
 \@outlinefile=\write3
 \openout3 = `main.out'.
@@ -252,18 +278,18 @@ Package hyperref Info: Link coloring OFF on input line 23.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 27.
+(Font)              <12> on input line 29.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 27.
+(Font)              <8> on input line 29.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 27.
+(Font)              <6> on input line 29.
 [1
 
 {/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.31 \end{abstract}
+l.33 \end{abstract}
                     [1] (./main.toc
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7> on input line 3.
@@ -273,7 +299,7 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.44 ....6.2}Implementation}{20}{subsection.4.6.2}
+l.44 ....6.2}Implementation}{23}{subsection.4.6.2}
                                                   % [1
 
 ])
@@ -285,8 +311,15 @@ Chapter 1.
 [3
 
 ]
+\openout2 = `chapters/introduction.aux'.
+
+ (./chapters/introduction.tex) [4
+
+]
 Chapter 2.
-[4
+[5
+
+
 
 ]
 \openout2 = `chapters/literaturereview.aux'.
@@ -296,22 +329,127 @@ Overfull \hbox (4.97981pt too wide) in paragraph at lines 15--15
 []\OT1/cmr/bx/n/14.4 Customer Be-hav-ior and Tech-nol-ogy Ac-cep-tance To-wards
  []
 
-[5
+[6
 
-] [6]) [7]
+]
+
+Package tabularx Warning: X Columns too narrow (table too wide)
+(tabularx)                 on input line 55.
+
+
+Overfull \hbox (31.52754pt too wide) in paragraph at lines 55--55
+[]|\OT1/cmr/bx/n/10 Solution| 
+ []
+
+
+Overfull \hbox (14.22224pt too wide) in paragraph at lines 55--55
+[]|\OT1/cmr/m/n/10 Toast
+ []
+
+
+Overfull \hbox (0.55557pt too wide) in paragraph at lines 55--55
+\OT1/cmr/m/n/10 [[]]| 
+ []
+
+
+Overfull \hbox (19.75005pt too wide) in paragraph at lines 55--55
+[]|\OT1/cmr/m/n/10 Square
+ []
+
+
+Overfull \hbox (0.55557pt too wide) in paragraph at lines 55--55
+\OT1/cmr/m/n/10 [[]]| 
+ []
+
+
+Overfull \hbox (23.91672pt too wide) in paragraph at lines 55--55
+[]|\OT1/cmr/m/n/10 Zuppler
+ []
+
+
+Overfull \hbox (5.55559pt too wide) in paragraph at lines 55--55
+\OT1/cmr/m/n/10 [[]]| 
+ []
+
+
+Overfull \hbox (43.27786pt too wide) in paragraph at lines 55--55
+[]|\OT1/cmr/m/n/10 TouchBistro
+ []
+
+
+Overfull \hbox (5.55559pt too wide) in paragraph at lines 55--55
+\OT1/cmr/m/n/10 [[]]| 
+ []
+
+
+Overfull \hbox (11.80562pt too wide) in paragraph at lines 55--55
+[]|\OT1/cmr/m/n/10 Bbot
+ []
+
+
+Overfull \hbox (5.55559pt too wide) in paragraph at lines 55--55
+\OT1/cmr/m/n/10 [[]]| 
+ []
+
+
+Overfull \hbox (22.77785pt too wide) in paragraph at lines 55--55
+[]|\OT1/cmr/m/n/10 Menufy
+ []
+
+
+Overfull \hbox (5.55559pt too wide) in paragraph at lines 55--55
+\OT1/cmr/m/n/10 [[]]| 
+ []
+
+
+Overfull \hbox (19.0556pt too wide) in paragraph at lines 55--55
+[]|\OT1/cmr/m/n/10 Future
+ []
+
+
+Overfull \hbox (5.02779pt too wide) in paragraph at lines 55--55
+\OT1/cmr/m/n/10 Or-
+ []
+
+
+Overfull \hbox (7.25pt too wide) in paragraph at lines 55--55
+\OT1/cmr/m/n/10 der-
+ []
+
+
+Overfull \hbox (3.33336pt too wide) in paragraph at lines 55--55
+\OT1/cmr/m/n/10 ing
+ []
+
+
+Overfull \hbox (5.55559pt too wide) in paragraph at lines 55--55
+\OT1/cmr/m/n/10 [[]]| 
+ []
+
+
+Overfull \hbox (20.22606pt too wide) in alignment at lines 55--55
+[][][][][] 
+ []
+
+[7] [8
+pdfTeX warning (ext4): destination with the same identifier (name{table.2.1}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.72 
+     ]) [9]
 Chapter 3.
-[8
+[10
 
 
 
 ]
 \openout2 = `chapters/methodology.aux'.
 
- (./chapters/methodology.tex [9
+ (./chapters/methodology.tex [11
 
-{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}] [10] [11]) [12]
+{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}] [12] [13]) [14]
 Chapter 4.
-[13
+[15
 
 
 
@@ -319,162 +457,162 @@ Chapter 4.
 \openout2 = `chapters/implementation.aux'.
 
  (./chapters/implementation.tex
-<images/databasediagram.png, id=462, 618.31pt x 931.48pt>
+<images/databasediagram.png, id=481, 618.31pt x 931.48pt>
 File: images/databasediagram.png Graphic file (type png)
 <use images/databasediagram.png>
 Package pdftex.def Info: images/databasediagram.png  used on input line 15.
 (pdftex.def)             Requested size: 426.79135pt x 642.97774pt.
- [14
+ [16
 
-] [15 <./images/databasediagram.png>] [16] [17] [18] [19] [20] [21]) [22]
+] [17 <./images/databasediagram.png>] [18] [19] [20] [21] [22] [23] [24]) [25]
 Chapter 5.
-[23
+[26
 
 
 
 ]
 Chapter 6.
-[24
+[27
 
 ]
 \openout2 = `chapters/evaluation.aux'.
 
- (./chapters/evaluation.tex [25
+ (./chapters/evaluation.tex [28
 
-]) [26]
+]) [29]
 Chapter 7.
-[27
+[30
 
 
 
 ]
 Chapter 8.
-[28
+[31
 
 ]
 Chapter 9.
-[29
+[32
 
 ]
 \openout2 = `chapters/appendix.aux'.
 
  (./chapters/appendix.tex)
-Underfull \hbox (badness 10000) in paragraph at lines 66--67
+Underfull \hbox (badness 10000) in paragraph at lines 68--69
 []\OT1/cmr/m/n/10 `(PDF) Smart QR-based Restau-rant Dine-in Sys-tem with Sales Anal-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 66--67
+Underfull \hbox (badness 10000) in paragraph at lines 68--69
 \OT1/cmr/m/n/10 y-sis', Re-search-Gate. [On-line]. Avail-able: []$\OT1/cmtt/m/n/10 https : / / www . researchgate .
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 66--67
+Underfull \hbox (badness 10000) in paragraph at lines 68--69
 \OT1/cmtt/m/n/10 net / publication / 360414606 _ Smart _ QR-[]based _ Restaurant _ Dine-[]in _
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 66--67
+Underfull \hbox (badness 10000) in paragraph at lines 68--69
 \OT1/cmtt/m/n/10 System _ with _ Sales _ Analysis / fulltext / 627a7d2b2f9ccf58eb3d5475 /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 66--67
+Underfull \hbox (badness 10000) in paragraph at lines 68--69
 \OT1/cmtt/m/n/10 Smart-[]QR-[]based-[]Restaurant-[]Dine-[]in-[]System-[]with-[]Sales-[]Analysis . pdf$[]\OT1/cmr/m/n/10 . [Ac-cessed:
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 72--73
+Underfull \hbox (badness 10000) in paragraph at lines 74--75
 []\OT1/cmr/m/n/10 `(PDF) Cus-tomer Ac-cep-tance of QR Menu Or-der-ing Sys-tem in Lux-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 72--73
+Underfull \hbox (badness 10000) in paragraph at lines 74--75
 \OT1/cmr/m/n/10 ury Restau-rants. A study of Xi'an, China', Re-search-Gate. [On-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 72--73
+Underfull \hbox (badness 10000) in paragraph at lines 74--75
 \OT1/cmr/m/n/10 line]. Avail-able: []$\OT1/cmtt/m/n/10 https : / / www . researchgate . net / profile / Anshul-[]Garg-[]4 /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 72--73
+Underfull \hbox (badness 10000) in paragraph at lines 74--75
 \OT1/cmtt/m/n/10 publication377586294 _ Customer _ Acceptance _ of _ QR _ Menu _ Ordering _ System _ in _
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 72--73
+Underfull \hbox (badness 10000) in paragraph at lines 74--75
 \OT1/cmtt/m/n/10 Luxury _ Restaurants _ A _ study _ of _ Xi '[] an _ China / links / 65ae68e29ce29c458b939be6 /
  []
 
 
-Overfull \hbox (68.51006pt too wide) in paragraph at lines 72--73
+Overfull \hbox (68.51006pt too wide) in paragraph at lines 74--75
 \OT1/cmtt/m/n/10 Customer-[]Acceptance-[]of-[]QR-[]Menu-[]Ordering-[]System-[]in-[]Luxury-[]Restaurants-[]A-[]study-[]of-[]Xian-[]China .
  []
 
-[30
+[33
 
 
 
 
 ]
-Underfull \hbox (badness 1803) in paragraph at lines 117--118
+Underfull \hbox (badness 1803) in paragraph at lines 119--120
 []\OT1/cmr/m/n/10 Real Python, \Build a Rec-om-men-da-tion En-gine With Col-lab-o-ra-tive Fil-ter-ing," Re-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 117--118
+Underfull \hbox (badness 10000) in paragraph at lines 119--120
 \OT1/cmr/m/n/10 alpython.com, Jul. 10, 2019. https://realpython.com/build-recommendation-engine-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 119--120
+Underfull \hbox (badness 10000) in paragraph at lines 121--122
 []\OT1/cmr/m/n/10 \What Is Col-lab-o-ra-tive Fil-ter-ing: A Sim-ple In-tro-duc-tion," Built In, 2019.
  []
 
 
-Underfull \hbox (badness 5893) in paragraph at lines 119--120
+Underfull \hbox (badness 5893) in paragraph at lines 121--122
 \OT1/cmr/m/n/10 https://builtin.com/data-science/collaborative-filtering-recommender-system (ac-cessed Mar.
  []
 
 
-Underfull \hbox (badness 5431) in paragraph at lines 121--122
+Underfull \hbox (badness 5431) in paragraph at lines 123--124
 \OT1/cmr/m/n/10 2022. https://www.analyticsvidhya.com/blog/2022/02/introduction-to-collaborative-filtering/
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 127--128
+Underfull \hbox (badness 10000) in paragraph at lines 129--130
 \OT1/cmr/m/n/10 Apr. 30, 2021. https://medium.com/sciforce/deep-learning-based-recommender-systems-
  []
 
-[31]
-Underfull \hbox (badness 5345) in paragraph at lines 129--130
+[34]
+Underfull \hbox (badness 5345) in paragraph at lines 131--132
 \OT1/cmr/m/n/10 gale-shapley-stable-matching-algorithm-and-its-time-complexity-4b814ee2642 (ac-cessed Mar.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 131--132
+Underfull \hbox (badness 10000) in paragraph at lines 133--134
 []\OT1/cmr/m/n/10 \How Net-flix's Rec-om-men-da-tions Sys-tem Works," Help Cen-ter, 2024.
  []
 
-[32{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}] (./main.aux (./chapters/literaturereview.aux) (./chapters/methodology.aux) (./chapters/implementation.aux) (./chapters/evaluation.aux) (./chapters/appendix.aux))
+[35{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}] (./main.aux (./chapters/introduction.aux) (./chapters/literaturereview.aux) (./chapters/methodology.aux) (./chapters/implementation.aux) (./chapters/evaluation.aux) (./chapters/appendix.aux))
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: B30F69F40FB3C16A6C501935260F5B34;9306.
+(rerunfilecheck)             Checksum: F2762C649BCF615ABEF9A294D913162E;9184.
  ) 
 Here is how much of TeX's memory you used:
- 9044 strings out of 476025
- 145826 string characters out of 5790016
+ 9275 strings out of 476025
+ 150239 string characters out of 5790016
  1865388 words of memory out of 5000000
- 29216 multiletter control sequences out of 15000+600000
+ 29428 multiletter control sequences out of 15000+600000
  519020 words of font info for 53 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,6n,76p,1230b,541s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,12n,76p,1713b,541s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on main.pdf (34 pages, 258871 bytes).
+Output written on main.pdf (37 pages, 269437 bytes).
 PDF statistics:
- 723 PDF objects out of 1000 (max. 8388607)
- 663 compressed objects within 7 object streams
- 158 named destinations out of 1000 (max. 500000)
- 518 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 744 PDF objects out of 1000 (max. 8388607)
+ 674 compressed objects within 7 object streams
+ 160 named destinations out of 1000 (max. 500000)
+ 510 words of extra memory for PDF output out of 10000 (max. 10000000)
 

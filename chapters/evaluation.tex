@@ -4,20 +4,8 @@ API testing were carried out to the Django backend to measure the performance of
 \subsection{API Testing}
 Both the server and the database are needed to be tested with multiple requests per second to simulate real life usage scenario. Specifically the Ordering API was tested in this experiment. The reason to this is to test how the server would handle multipe order requests at the same time. Postman was used to send multiple POST requests to the server because the platform allows tests to be written in JavaScript and run in the Postman environment. Provided with the correct body and headers in the API call, every request had to return a 200 response code. The treshold for any response time is 200ms to maintain a responsive system. The tests are separated between POST requests and GET requests. The POST requests are used to send data and the GET requests are used to retrieve from the database.
 
-\subsection{POST Request Testing}
-Some of the most demanding POST requests were used in testing and these chosen POST requests are the ones that are most likely to be used in a real world scenario and will have the most impact to the system efficiency and user experience. The POST API calls that are selected to be used in this test are chosen based on the most common user actions. The POST requests that were tested are the following:
-
-    \begin{itemize}
-        \item \textbf{Create order}: \url{localhost:8000/api/create_payment_intent/}
-        \item \textbf{Generate Invoice}: \url{localhost:8000/api/create-invoice/}
-        \item \textbf{Create table session}: \url{localhost:8000/api/sessions/}
-    \end{itemize}
-
-\subsection*{Results}
-The results of the POST request testing are shown in the table below. The table shows the response time of each request and the response code that was returned. The response time is measured in milliseconds and the response code is the HTTP status code that was returned by the server. The response time is the time taken by the server to process the request and send a response back to the client. The response code is a three-digit code that indicates the status of the request. A response code of 200 indicates that the request was successful, while a response code of 400 or 500 indicates that there was an error.
-
-\subsection{GET Request Testing}
-Some of the most demanding GET requests were used in testing and these chosen GET requests are the ones that are most likely to be used in a real world scenario and will have the most impact to the system efficiency and user experience. For example the Recommendation API calls are the most demanding as the recommender algorithm would need to process each new customer that logs in to the digital menu. The GET requests that were tested are the following:
+\subsection{GET and POST Request Testing}
+Some of the most demanding GET and POST requests were selected in this test. The selected requests are the most demanding API requests in the system and those that are most likely to affect the experience of the customers and the admin of the system. The following are the API requests that were tested:
 
     \begin{itemize}
         \item \textbf{Get all orders}: \url{localhost:8000/api/orders/}
@@ -34,6 +22,12 @@ Some of the most demanding GET requests were used in testing and these chosen GE
 
 \subsection*{Results}
 The results of the GET request testing are shown in the table below. The table shows the response time of each request and the response code that was returned. The response time is measured in milliseconds and the response code is the HTTP status code that was returned by the server. The response time is the time taken by the server to process the request and send a response back to the client. The response code is a three-digit code that indicates the status of the request. A response code of 200 indicates that the request was successful, while a response code of 400 or 500 indicates that there was an error.
+
+The Recommendations API calls were simulated with a load of 20 virtual users over a 2-minute duration. A total of 4201 requests were sent which translates to a throughput of 33.13 requests per second and the average response time was 76ms across all requests from the recommender algorithm. The total number of requests that were successful was 4201 which translates to 100\% success rate. The total number of failed requests was 0 which translates to 0\% failure rate. Wherelse the Get all menu items API call was simulated with a load of 20 virtual users over a 2-minute duration. A total of 2059 requests were sent and maintained a throughput of 16.23 requests per second and the average response time was 167ms. This indicates that the customer experience when loading into the menu is still acceptable as the response time is still below 200ms. The Get all table sessions API call was simulated with the same environment. A total of 2219 requests were sent which translates to a throughput of 17.50 requests per second with an average response time of 28ms across the test.
+
+On the admin side, the Total Sales Today, Total Sales This Week, Total Sales This Month, Customer Analysis API calls was simulated with a load of 20 virtual users over a 2-minute duration. A total of 8628 requests were sent which translates to a throughput of 68.00 requests per second and the average response time was 17ms across all requests. There was no errors throughout the testing which translates to a 100\% success rate. However the Get all orders API call was simulated with the same environment. The were only a total of 495 requests that were made in the 2-minute duration which translates to a throughput of 3.91 requests per second and the average response time was 3787ms. This indicates that the Get all orders API call needs more optimization as the response time is well above 200ms.
+
+In conclusion, API calls on both the customer and the admin side are performing well and the system is able to handle multiple requests at the same time. The response time is still well below 200ms which is acceptable to maintain a responsive system. This meets the non-functional requirements of the performance, reliability, and scalability of the system as the system is able to handle multiple requests at the same time and still maintain a responsive system.
 
 \section{Requirements Evaluation}
 
